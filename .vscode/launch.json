@@ -1,0 +1,58 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Stg(Debug Build)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "args": [
+
+            ],
+        },
+        {
+            "name": "Stg(Release Build)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": [
+                "--dart-define=BUILD_ENV=stg",
+                "--dart-define=APP_ID_SUFFIX=.stg",
+                "--dart-define=APP_NAME_PREFIX=[stg]",
+                "--dart-define=DMM_EMSP_API_URL=https://test-dmm-emsp-server-4be75miidq-an.a.run.app",
+                "--dart-define=STRIPE_PUBLISHABLE_KEY=pk_test_51MFadlLRutzLUZZq7AooYh61InzDYsqzWgF1WRxZubzcRBZD2JEPHuq7GahLuWj9JvTXyAtCUcWdedphZzsIWWZx001wAGnnnO",
+                "--dart-define=GOOGLE_API_KEY=AIzaSyB3Tk9BaLO2QmnO7GhXcIt_GOsK7xd8P1s",
+                "--dart-define=DYNAMIC_LINK_DOMAIN=stgdmm.page.link",
+                "--dart-define=WEB_DOMAIN=dmm-ev-charge.web.app",
+            ],
+        },
+        {
+            "name": "Prod(Debug Build)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "args": [
+                "--dart-define=BUILD_ENV=prod",
+                "--dart-define=DMM_EMSP_API_URL=https://dmm-emsp-server-selzdog4la-an.a.run.app",
+                "--dart-define=STRIPE_PUBLISHABLE_KEY=pk_live_51MFadlLRutzLUZZqLufFaNqPQl31N9lbBAyTOtG4F7SRtzv1Z6aJmDKGE5OHH77uv2Upu3zu2R5ybQ0k0VMQyRlm00aNN4DA1K",
+                "--dart-define=GOOGLE_API_KEY=AIzaSyC9AOTEjuN_9MXvETN-TR1Li3efrDcsk2s",
+                "--dart-define=DYNAMIC_LINK_DOMAIN=dmm.page.link",
+                "--dart-define=WEB_DOMAIN=dmm-ev-charge.web.app",
+            ],
+        },
+        {
+            "name": "Prod(Release Build)",
+            "request": "launch",
+            "flutterMode": "release",
+            "type": "dart",
+            "args": [
+                "--dart-define=BUILD_ENV=prod",
+                "--dart-define=DMM_EMSP_API_URL=https://dmm-emsp-server-selzdog4la-an.a.run.app",
+                "--dart-define=STRIPE_PUBLISHABLE_KEY=pk_live_51MFadlLRutzLUZZqLufFaNqPQl31N9lbBAyTOtG4F7SRtzv1Z6aJmDKGE5OHH77uv2Upu3zu2R5ybQ0k0VMQyRlm00aNN4DA1K",
+                "--dart-define=GOOGLE_API_KEY=AIzaSyC9AOTEjuN_9MXvETN-TR1Li3efrDcsk2s",
+                "--dart-define=DYNAMIC_LINK_DOMAIN=dmm.page.link",
+                "--dart-define=WEB_DOMAIN=dmm-ev-charge.web.app",
+            ]
+        },
+    ]
+}
