@@ -2,8 +2,8 @@
   "name": "tmpflutter_webview",
   "version": "0.0.1",
   "directories": {
-    "example": "flutter_inappwebview/example",
-    "lib": "flutter_inappwebview/lib"
+    "example": "tmpflutter_webview/example",
+    "lib": "tmpflutter_webview/lib"
   },
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
     "watch": "flutter pub run build_runner watch --delete-conflicting-outputs",
     "publish:dry": "flutter pub publish --dry-run",
     "publish": "flutter pub publish",
-    "format": "dart format flutter_inappwebview/lib flutter_inappwebview_platform_interface/lib flutter_inappwebview_android/lib flutter_inappwebview_ios/lib",
+    "format": "dart format tmpflutter_webview/lib tmpflutter_webview_platform_interface/lib tmpflutter_webview_android/lib tmpflutter_webview_ios/lib",
     "build:publish": "npm run format && npm run build && flutter pub publish",
     "docs:gen": "flutter pub global activate dartdoc && flutter pub global run dartdoc:dartdoc",
     "docs:serve": "flutter pub global activate dhttpd && flutter pub global run dhttpd:dhttpd --path doc/api"
