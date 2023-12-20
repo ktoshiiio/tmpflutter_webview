@@ -40,7 +40,9 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
           children: [
             InAppWebView(
               key: webViewKey,
-              uid: '855384303',
+              mediaId: '560363030',
+              userParameter: 'user',
+              prefixUrl: 'https://dev.fusion-wall.smaad.net/wall/',
               initialSettings: settings,
               onWebViewCreated: (controller) async {
                 webViewController = controller;

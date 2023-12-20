@@ -36,7 +36,9 @@ class InAppWebView extends StatefulWidget {
   ///{@macro tmpflutter_webview_platform_interface.PlatformInAppWebViewWidget}
   InAppWebView({
     Key? key,
-    String? uid,
+    required String? mediaId,
+    required String? userParameter,
+    String? prefixUrl,
     Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
     int? windowId,
     HeadlessInAppWebView? headlessWebView,
@@ -303,7 +305,7 @@ class InAppWebView extends StatefulWidget {
               windowId: windowId,
               keepAlive: keepAlive,
               initialUrlRequest: URLRequest(
-                  url: WebUri('https://wall.smaad.net/wall/$uid/?u=test')),
+                  url: WebUri('${prefixUrl}${mediaId}/?u=${userParameter}')),
               initialFile: initialFile,
               initialData: initialData,
               initialOptions: initialOptions,

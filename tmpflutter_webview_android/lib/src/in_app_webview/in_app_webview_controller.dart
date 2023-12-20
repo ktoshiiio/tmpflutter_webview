@@ -217,6 +217,16 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
       _debugLog(call.method, call.arguments);
     }
 
+    print('method = $call.method');
+
+    if (call.method == "onConsoleMessage" &&
+        call.arguments.toString().contains("Android.webViewClosed()")) {
+      // ここに任意の処理を記述
+      print("特定のメッセージが検出されました: $call.arguments");
+      if (webviewParams != null && webviewParams!.onWebViewClosed != null)
+        webviewParams!.onWebViewClosed!(_controllerFromPlatform);
+    }
+
     switch (call.method) {
       case "onWebViewClosed":
         if (webviewParams != null) {
@@ -1416,12 +1426,6 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
         String handlerName = call.arguments["handlerName"];
         // decode args to json
         List<dynamic> args = jsonDecode(call.arguments["args"]);
-
-        if (handlerName.contains('onCloseAction')) {
-          if (webviewParams != null) {
-            webviewParams!.onWebViewClosed!(_controllerFromPlatform);
-          }
-        }
 
         _debugLog(handlerName, args);
 
