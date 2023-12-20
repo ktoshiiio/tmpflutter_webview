@@ -1,6 +1,6 @@
 name: tmpflutter_webview_android
 description: Android implementation of the flutter_inappwebview plugin.
-version: 0.0.29
+version: 0.0.39
 homepage: http://empolio.co.jp/site-renewal/
 
 topics:

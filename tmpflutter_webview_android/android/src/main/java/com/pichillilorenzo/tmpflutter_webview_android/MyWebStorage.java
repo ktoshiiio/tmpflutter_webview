@@ -18,7 +18,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class MyWebStorage extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "MyWebStorage";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_webstoragemanager";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_webstoragemanager";
 
   @Nullable
   public static WebStorage webStorageManager;

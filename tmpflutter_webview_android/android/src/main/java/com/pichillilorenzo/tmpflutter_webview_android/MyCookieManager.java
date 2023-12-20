@@ -29,7 +29,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class MyCookieManager extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "MyCookieManager";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_cookiemanager";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_cookiemanager";
   @Nullable
   public static CookieManager cookieManager;
   @Nullable

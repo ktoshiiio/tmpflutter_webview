@@ -31,7 +31,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class InAppWebViewManager extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "InAppWebViewManager";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_manager";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_manager";
   
   @Nullable
   public InAppWebViewFlutterPlugin plugin;

@@ -98,7 +98,7 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
             ? params
             : AndroidInAppWebViewControllerCreationParams
                 .fromPlatformInAppWebViewControllerCreationParams(params)) {
-    channel = MethodChannel('com.pichillilorenzo/flutter_inappwebview_$id');
+    channel = MethodChannel('com.pichillilorenzo/tmpflutter_webview_$id');
     handler = handleMethod;
     initMethodCallHandler();
 
@@ -219,18 +219,9 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
 
     print('method = $call.method');
 
-    if (call.method == "onConsoleMessage" &&
-        call.arguments.toString().contains("Android.webViewClosed()")) {
-      // ここに任意の処理を記述
-      print("特定のメッセージが検出されました: $call.arguments");
-      if (webviewParams != null && webviewParams!.onWebViewClosed != null)
-        webviewParams!.onWebViewClosed!(_controllerFromPlatform);
-    }
-
     switch (call.method) {
       case "onWebViewClosed":
         if (webviewParams != null) {
-          // ignore: deprecated_member_use_from_same_package
           webviewParams!.onWebViewClosed!(_controllerFromPlatform);
         }
         break;

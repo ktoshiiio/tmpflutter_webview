@@ -1,6 +1,6 @@
 name: tmpflutter_webview_ios
 description: iOS implementation of the flutter_inappwebview plugin.
-version: 0.0.26
+version: 0.0.41
 homepage: http://empolio.co.jp/site-renewal/
 topics:
   - html

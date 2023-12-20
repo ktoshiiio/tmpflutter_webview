@@ -14,7 +14,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
                             WKDownloadDelegate,
                             PullToRefreshDelegate,
                             Disposable {
-    static var METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_"
+    static var METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_"
 
     var id: Any? // viewId
     var plugin: SwiftFlutterPlugin?
@@ -585,6 +585,9 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
         configuration.userContentController.add(self, name: "onWebMessageListenerPostMessageReceived")
         configuration.userContentController.addUserOnlyScripts(initialUserScripts)
         configuration.userContentController.sync(scriptMessageHandler: self)
+        // webViewClosed メッセージハンドラの追加
+        configuration.userContentController.removeScriptMessageHandler(forName: "webViewClosed")
+        configuration.userContentController.add(self, name: "webViewClosed")
     }
     
     public static func preWKWebViewConfiguration(settings: InAppWebViewSettings?) -> WKWebViewConfiguration {
@@ -2930,6 +2933,8 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
                 }
                 webMessageListener.channelDelegate?.onPostMessage(message: webMessage, sourceOrigin: sourceOrigin, isMainFrame: isMainFrame)
             }
+        } else if message.name == "webViewClosed" {
+            print("webViewClosed called from JavaScript")
         }
     }
     

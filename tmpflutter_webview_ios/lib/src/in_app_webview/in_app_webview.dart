@@ -310,7 +310,7 @@ class IOSInAppWebViewWidget extends PlatformInAppWebViewWidget {
     }
 
     return UiKitView(
-      viewType: 'com.pichillilorenzo/flutter_inappwebview',
+      viewType: 'com.pichillilorenzo/tmpflutter_webview',
       onPlatformViewCreated: _onPlatformViewCreated,
       gestureRecognizers: _iosParams.gestureRecognizers,
       creationParams: <String, dynamic>{

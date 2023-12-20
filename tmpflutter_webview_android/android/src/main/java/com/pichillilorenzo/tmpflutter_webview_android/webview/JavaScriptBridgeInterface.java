@@ -44,6 +44,22 @@ public class JavaScriptBridgeInterface {
   }
 
   @JavascriptInterface
+  public void webViewClosed(){
+    if (inAppWebView == null){
+      return;
+    }
+    final Handler handler = new Handler(inAppWebView.getWebViewLooper());
+    handler.post(new Runnable() {
+      @Override
+      public void run() {
+        if (inAppWebView != null) {
+          inAppWebView.webViewClosed();
+        }
+      }
+    });
+  }
+
+  @JavascriptInterface
   public void _callHandler(final String handlerName, final String _callHandlerID, final String args) {
     if (inAppWebView == null) {
       return;

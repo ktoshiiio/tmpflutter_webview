@@ -15,7 +15,7 @@ import io.flutter.plugin.common.MethodChannel;
 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class PrintJobController implements Disposable  {
   protected static final String LOG_TAG = "PrintJob";
-  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_printjobcontroller_";
+  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_printjobcontroller_";
   
   @NonNull
   public String id;

@@ -23,7 +23,7 @@ import io.flutter.plugin.common.MethodChannel;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class CredentialDatabaseHandler extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "CredentialDatabaseHandler";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_credential_database";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_credential_database";
 
   @Nullable
   public static CredentialDatabase credentialDatabase;

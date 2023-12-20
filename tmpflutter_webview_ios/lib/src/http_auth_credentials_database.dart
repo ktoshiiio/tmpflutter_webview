@@ -38,7 +38,7 @@ class IOSHttpAuthCredentialDatabase extends PlatformHttpAuthCredentialDatabase
                   .fromPlatformHttpAuthCredentialDatabaseCreationParams(params),
         ) {
     channel = const MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_credential_database');
+        'com.pichillilorenzo/tmpflutter_webview_credential_database');
     handler = handleMethod;
     initMethodCallHandler();
   }

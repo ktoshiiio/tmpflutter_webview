@@ -12,7 +12,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class FindInteractionController implements Disposable {
   static final String LOG_TAG = "FindInteractionController";
-  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_find_interaction_";
+  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_find_interaction_";
 
   @Nullable
   public InAppWebViewInterface webView;

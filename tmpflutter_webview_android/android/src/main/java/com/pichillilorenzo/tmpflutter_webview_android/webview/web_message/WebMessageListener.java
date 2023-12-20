@@ -31,7 +31,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class WebMessageListener implements Disposable {
   protected static final String LOG_TAG = "WebMessageListener";
-  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_web_message_listener_";
+  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_web_message_listener_";
 
   @NonNull
   public String id;

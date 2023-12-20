@@ -37,7 +37,7 @@ class AndroidProcessGlobalConfig extends PlatformProcessGlobalConfig
                   .fromPlatformProcessGlobalConfigCreationParams(params),
         ) {
     channel = const MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_processglobalconfig');
+        'com.pichillilorenzo/tmpflutter_webview_processglobalconfig');
     handler = handleMethod;
     initMethodCallHandler();
   }

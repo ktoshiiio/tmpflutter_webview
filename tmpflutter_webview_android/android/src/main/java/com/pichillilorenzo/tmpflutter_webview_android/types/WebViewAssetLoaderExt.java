@@ -101,7 +101,7 @@ public class WebViewAssetLoaderExt implements Disposable {
   public static class PathHandlerExt implements WebViewAssetLoader.PathHandler, Disposable {
 
     protected static final String LOG_TAG = "PathHandlerExt";
-    public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_custompathhandler_";
+    public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_custompathhandler_";
 
     @NonNull
     public String id;

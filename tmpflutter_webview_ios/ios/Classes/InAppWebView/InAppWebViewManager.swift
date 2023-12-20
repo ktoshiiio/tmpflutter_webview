@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 
 public class InAppWebViewManager: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_manager"
+    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_manager"
     var plugin: SwiftFlutterPlugin?
     var webViewForUserAgent: WKWebView?
     var defaultUserAgent: String?

@@ -12,7 +12,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class TracingControllerManager implements Disposable {
   protected static final String LOG_TAG = "TracingControllerMan";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_tracingcontroller";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_tracingcontroller";
 
   @Nullable
   public TracingControllerChannelDelegate channelDelegate;

@@ -320,7 +320,7 @@ class AndroidInAppWebViewWidget extends PlatformInAppWebViewWidget {
 
     return PlatformViewLink(
       key: _androidParams.key,
-      viewType: 'com.pichillilorenzo/flutter_inappwebview',
+      viewType: 'com.pichillilorenzo/tmpflutter_webview',
       surfaceFactory: (
         BuildContext context,
         PlatformViewController controller,
@@ -336,7 +336,7 @@ class AndroidInAppWebViewWidget extends PlatformInAppWebViewWidget {
         return _createAndroidViewController(
           hybridComposition: useHybridComposition,
           id: params.id,
-          viewType: 'com.pichillilorenzo/flutter_inappwebview',
+          viewType: 'com.pichillilorenzo/tmpflutter_webview',
           layoutDirection: _androidParams.layoutDirection ??
               Directionality.maybeOf(context) ??
               TextDirection.rtl,

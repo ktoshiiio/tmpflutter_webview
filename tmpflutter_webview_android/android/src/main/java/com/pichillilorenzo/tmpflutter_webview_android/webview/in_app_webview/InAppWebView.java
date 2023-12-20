@@ -241,7 +241,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     }
 
     javaScriptBridgeInterface = new JavaScriptBridgeInterface(this);
-    addJavascriptInterface(javaScriptBridgeInterface, JavaScriptBridgeJS.JAVASCRIPT_BRIDGE_NAME);
+//    addJavascriptInterface(javaScriptBridgeInterface, JavaScriptBridgeJS.JAVASCRIPT_BRIDGE_NAME);
+    addJavascriptInterface(javaScriptBridgeInterface, "Android");
 
     inAppWebViewChromeClient = new InAppWebViewChromeClient(plugin, this, inAppBrowserDelegate);
     setWebChromeClient(inAppWebViewChromeClient);
@@ -1721,6 +1722,12 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     floatingContextMenu = null;
 
     if (channelDelegate != null) channelDelegate.onHideContextMenu();
+  }
+
+  public void webViewClosed(){
+    if(channelDelegate != null){
+      channelDelegate.onWebViewClosed();
+    }
   }
 
   public void onScrollStopped() {

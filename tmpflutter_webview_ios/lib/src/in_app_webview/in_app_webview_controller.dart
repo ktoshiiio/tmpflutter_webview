@@ -96,7 +96,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
             ? params
             : IOSInAppWebViewControllerCreationParams
                 .fromPlatformInAppWebViewControllerCreationParams(params)) {
-    channel = MethodChannel('com.pichillilorenzo/flutter_inappwebview_$id');
+    channel = MethodChannel('com.pichillilorenzo/tmpflutter_webview_$id');
     print('koko called!!!!');
     handler = handleMethod;
     initMethodCallHandler();
@@ -214,14 +214,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
       _debugLog(call.method, call.arguments);
     }
 
-    if (call.method == "onConsoleMessage" &&
-        call.arguments.toString().contains(
-            "window.webkit.messageHandlers.webViewClosed.postMessage")) {
-      // ここに任意の処理を記述
-      print("特定のメッセージが検出されました: $call.arguments");
-      if (webviewParams != null && webviewParams!.onWebViewClosed != null)
-        webviewParams!.onWebViewClosed!(_controllerFromPlatform);
-    }
+    print('call method = ${call.method}');
 
     switch (call.method) {
       case "onLoadStart":

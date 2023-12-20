@@ -18,7 +18,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class ProxyManager extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "ProxyManager";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_proxycontroller";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_proxycontroller";
 
   @Nullable
   public static ProxyController proxyController;

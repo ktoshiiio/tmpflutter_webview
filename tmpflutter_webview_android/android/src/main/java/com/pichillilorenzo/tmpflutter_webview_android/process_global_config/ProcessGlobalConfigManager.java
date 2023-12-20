@@ -16,7 +16,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class ProcessGlobalConfigManager extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "ProcessGlobalConfigM";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_processglobalconfig";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_processglobalconfig";
 
   @Nullable
   public InAppWebViewFlutterPlugin plugin;

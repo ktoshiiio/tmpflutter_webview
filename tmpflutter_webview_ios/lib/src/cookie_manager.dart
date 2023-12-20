@@ -41,7 +41,7 @@ class IOSCookieManager extends PlatformCookieManager with ChannelController {
                   .fromPlatformCookieManagerCreationParams(params),
         ) {
     channel = const MethodChannel(
-        'com.pichillilorenzo/flutter_inappwebview_cookiemanager');
+        'com.pichillilorenzo/tmpflutter_webview_cookiemanager');
     handler = handleMethod;
     initMethodCallHandler();
   }

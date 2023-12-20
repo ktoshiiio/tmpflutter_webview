@@ -8,7 +8,7 @@
 import Foundation
 
 public class PlatformUtil: ChannelDelegate {
-    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_platformutil"
+    static let METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_platformutil"
     var plugin: SwiftFlutterPlugin?
     
     init(plugin: SwiftFlutterPlugin) {

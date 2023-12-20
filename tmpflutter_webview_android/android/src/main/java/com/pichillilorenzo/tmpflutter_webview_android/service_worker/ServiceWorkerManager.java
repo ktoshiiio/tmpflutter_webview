@@ -25,7 +25,7 @@ import io.flutter.plugin.common.MethodChannel;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class ServiceWorkerManager implements Disposable {
   protected static final String LOG_TAG = "ServiceWorkerManager";
-  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/flutter_inappwebview_serviceworkercontroller";
+  public static final String METHOD_CHANNEL_NAME = "com.pichillilorenzo/tmpflutter_webview_serviceworkercontroller";
 
   @Nullable
   public ServiceWorkerChannelDelegate channelDelegate;

@@ -17,7 +17,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class PullToRefreshLayout extends SwipeRefreshLayout implements Disposable {
   static final String LOG_TAG = "PullToRefreshLayout";
-  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_pull_to_refresh_";
+  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_pull_to_refresh_";
   
   @Nullable
   public PullToRefreshChannelDelegate channelDelegate;
