@@ -217,6 +217,17 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
     print('call method = ${call.method}');
 
     switch (call.method) {
+      // case "launchURL":
+      //   if (webviewParams != null) {
+      //     String? url = call.arguments["url"];
+      //     webviewParams!.launchURL!(_controllerFromPlatform, url);
+      //   }
+      //   break;
+      case "onWebViewClosed":
+        if (webviewParams != null) {
+          webviewParams!.onWebViewClosed!(_controllerFromPlatform);
+        }
+        break;
       case "onLoadStart":
         _injectedScriptsFromURL.clear();
         if ((webviewParams != null && webviewParams!.onLoadStart != null) ||
@@ -269,8 +280,6 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
             _inAppBrowserEventHandler!.onReceivedError(request, error);
           }
         }
-        break;
-      case "onWebViewClosed":
         break;
       case "onReceivedHttpError":
         if ((webviewParams != null &&
@@ -2707,12 +2716,12 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
   }
 
   @override
-  Future<String> get tRexRunnerHtml async => await rootBundle.loadString(
-      'packages/flutter_inappwebview/assets/t_rex_runner/t-rex.html');
+  Future<String> get tRexRunnerHtml async => await rootBundle
+      .loadString('packages/tmpflutter_webview/assets/t_rex_runner/t-rex.html');
 
   @override
-  Future<String> get tRexRunnerCss async => await rootBundle.loadString(
-      'packages/flutter_inappwebview/assets/t_rex_runner/t-rex.css');
+  Future<String> get tRexRunnerCss async => await rootBundle
+      .loadString('packages/tmpflutter_webview/assets/t_rex_runner/t-rex.css');
 
   @override
   dynamic getViewId() {

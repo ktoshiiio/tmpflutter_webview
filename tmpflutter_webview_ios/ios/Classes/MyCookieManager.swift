@@ -1,6 +1,6 @@
 //
 //  MyCookieManager.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo on 26/10/18.
 //

@@ -1,6 +1,6 @@
 //
 //  InAppBrowserOptions.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo on 17/09/18.
 //

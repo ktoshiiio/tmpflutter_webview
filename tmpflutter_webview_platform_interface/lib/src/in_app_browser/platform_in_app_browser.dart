@@ -120,7 +120,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   factory PlatformInAppBrowser(PlatformInAppBrowserCreationParams params) {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',
@@ -135,7 +135,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   factory PlatformInAppBrowser.static() {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',
@@ -524,7 +524,11 @@ abstract class PlatformInAppBrowserEvents {
   ///- MacOS ([Official API - WKNavigationDelegate.webView](https://developer.apple.com/documentation/webkit/wknavigationdelegate/1455623-webview))
   void onReceivedError(WebResourceRequest request, WebResourceError error) {}
 
-  void onWebViewClosed() {}
+  void onWebViewClosed() {
+    print('platform_in_app_browser onWebViewClosed');
+  }
+
+  // void launchURL(String? url) {}
 
   ///Use [onReceivedHttpError] instead.
   @Deprecated("Use onReceivedHttpError instead")

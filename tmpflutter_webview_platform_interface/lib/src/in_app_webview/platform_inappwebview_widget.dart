@@ -31,6 +31,7 @@ class PlatformInAppWebViewWidgetCreationParams
     super.onLoadStop,
     @Deprecated('Use onReceivedError instead') super.onLoadError,
     super.onReceivedError,
+    super.onWebViewClosed,
     @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
     super.onReceivedHttpError,
     super.onProgressChanged,
@@ -133,7 +134,7 @@ class PlatformInAppWebViewWidgetCreationParams
     super.initialUserScripts,
     super.pullToRefreshController,
     super.findInteractionController,
-    super.onWebViewClosed,
+    // super.launchURL,
   });
 
   /// Controls how one widget replaces another widget in the tree.
@@ -201,7 +202,7 @@ abstract class PlatformInAppWebViewWidget extends PlatformInterface
       PlatformInAppWebViewWidgetCreationParams params) {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',

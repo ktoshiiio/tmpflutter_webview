@@ -25,6 +25,7 @@ class PlatformHeadlessInAppWebViewCreationParams
       @Deprecated('Use onReceivedError instead') super.onLoadError,
       super.onReceivedError,
       super.onWebViewClosed,
+      // super.launchURL,
       @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
       super.onReceivedHttpError,
       super.onProgressChanged,
@@ -163,7 +164,7 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
       PlatformHeadlessInAppWebViewCreationParams params) {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',

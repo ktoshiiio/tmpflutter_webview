@@ -1,6 +1,6 @@
 //
 //  FlutterWebViewController.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo on 13/11/18.
 //

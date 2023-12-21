@@ -1,6 +1,6 @@
 //
 //  InAppBrowserNavigationController.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 14/02/21.
 //

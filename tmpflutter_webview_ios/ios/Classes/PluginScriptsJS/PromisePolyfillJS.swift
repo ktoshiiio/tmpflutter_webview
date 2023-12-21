@@ -1,6 +1,6 @@
 //
 //  PromisePolyfillJS.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //

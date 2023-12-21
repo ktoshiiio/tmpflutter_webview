@@ -139,6 +139,7 @@ class InAppWebView extends StatefulWidget {
     void Function(InAppWebViewController controller, WebResourceRequest request,
             WebResourceError error)?
         onReceivedError,
+    void Function(InAppWebViewController controller)? onWebViewClosed,
     @Deprecated("Use onReceivedHttpError instead")
     void Function(InAppWebViewController controller, Uri? url, int statusCode,
             String description)?
@@ -295,7 +296,8 @@ class InAppWebView extends StatefulWidget {
     void Function(InAppWebViewController controller, Size oldContentSize,
             Size newContentSize)?
         onContentSizeChanged,
-    void Function(InAppWebViewController controller)? onWebViewClosed,
+    // void Function(InAppWebViewController controller)? onWebViewClosed,
+    // void Function(InAppWebViewController controller, String? url)? launchURL,
   }) : this.fromPlatformCreationParams(
             key: key,
             params: PlatformInAppWebViewWidgetCreationParams(
@@ -331,6 +333,9 @@ class InAppWebView extends StatefulWidget {
               onReceivedError: onReceivedError != null
                   ? (controller, request, error) =>
                       onReceivedError.call(controller, request, error)
+                  : null,
+              onWebViewClosed: onWebViewClosed != null
+                  ? (controller) => onWebViewClosed.call(controller)
                   : null,
               onLoadHttpError: onLoadHttpError != null
                   ? (controller, url, statusCode, description) =>
@@ -661,9 +666,12 @@ class InAppWebView extends StatefulWidget {
               gestureRecognizers: gestureRecognizers,
               headlessWebView: headlessWebView?.platform,
               preventGestureDelay: preventGestureDelay,
-              onWebViewClosed: onWebViewClosed != null
-                  ? (controller) => onWebViewClosed.call(controller)
-                  : null,
+              // onWebViewClosed: onWebViewClosed != null
+              //     ? (controller) => onWebViewClosed.call(controller)
+              //     : null,
+              // launchURL: launchURL != null
+              //     ? (controller, url) => launchURL.call(controller, url)
+              //     : null,
             ));
 
   @override

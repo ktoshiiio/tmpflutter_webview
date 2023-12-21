@@ -1,6 +1,6 @@
 //
 //  InterceptAjaxRequestsJS.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //
@@ -24,14 +24,14 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
   var send = ajax.prototype.send;
   var open = ajax.prototype.open;
   var setRequestHeader = ajax.prototype.setRequestHeader;
-  ajax.prototype._flutter_inappwebview_url = null;
-  ajax.prototype._flutter_inappwebview_method = null;
-  ajax.prototype._flutter_inappwebview_isAsync = null;
-  ajax.prototype._flutter_inappwebview_user = null;
-  ajax.prototype._flutter_inappwebview_password = null;
-  ajax.prototype._flutter_inappwebview_password = null;
-  ajax.prototype._flutter_inappwebview_already_onreadystatechange_wrapped = false;
-  ajax.prototype._flutter_inappwebview_request_headers = {};
+  ajax.prototype._tmpflutter_webview_url = null;
+  ajax.prototype._tmpflutter_webview_method = null;
+  ajax.prototype._tmpflutter_webview_isAsync = null;
+  ajax.prototype._tmpflutter_webview_user = null;
+  ajax.prototype._tmpflutter_webview_password = null;
+  ajax.prototype._tmpflutter_webview_password = null;
+  ajax.prototype._tmpflutter_webview_already_onreadystatechange_wrapped = false;
+  ajax.prototype._tmpflutter_webview_request_headers = {};
   function convertRequestResponse(request, callback) {
     if (request.response != null && request.responseType != null) {
       switch (request.responseType) {
@@ -57,16 +57,16 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
   };
   ajax.prototype.open = function(method, url, isAsync, user, password) {
     isAsync = (isAsync != null) ? isAsync : true;
-    this._flutter_inappwebview_url = url;
-    this._flutter_inappwebview_method = method;
-    this._flutter_inappwebview_isAsync = isAsync;
-    this._flutter_inappwebview_user = user;
-    this._flutter_inappwebview_password = password;
-    this._flutter_inappwebview_request_headers = {};
+    this._tmpflutter_webview_url = url;
+    this._tmpflutter_webview_method = method;
+    this._tmpflutter_webview_isAsync = isAsync;
+    this._tmpflutter_webview_user = user;
+    this._tmpflutter_webview_password = password;
+    this._tmpflutter_webview_request_headers = {};
     open.call(this, method, url, isAsync, user, password);
   };
   ajax.prototype.setRequestHeader = function(header, value) {
-    this._flutter_inappwebview_request_headers[header] = value;
+    this._tmpflutter_webview_request_headers[header] = value;
     setRequestHeader.call(this, header, value);
   };
   function handleEvent(e) {
@@ -85,13 +85,13 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
       }
       convertRequestResponse(this, function(response) {
         var ajaxRequest = {
-          method: self._flutter_inappwebview_method,
-          url: self._flutter_inappwebview_url,
-          isAsync: self._flutter_inappwebview_isAsync,
-          user: self._flutter_inappwebview_user,
-          password: self._flutter_inappwebview_password,
+          method: self._tmpflutter_webview_method,
+          url: self._tmpflutter_webview_url,
+          isAsync: self._tmpflutter_webview_isAsync,
+          user: self._tmpflutter_webview_user,
+          password: self._tmpflutter_webview_password,
           withCredentials: self.withCredentials,
-          headers: self._flutter_inappwebview_request_headers,
+          headers: self._tmpflutter_webview_request_headers,
           readyState: self.readyState,
           status: self.status,
           responseURL: self.responseURL,
@@ -123,8 +123,8 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
   ajax.prototype.send = function(data) {
     var self = this;
     if (\(FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE) == null || \(FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE) == true) {
-      if (!this._flutter_inappwebview_already_onreadystatechange_wrapped) {
-        this._flutter_inappwebview_already_onreadystatechange_wrapped = true;
+      if (!this._tmpflutter_webview_already_onreadystatechange_wrapped) {
+        this._tmpflutter_webview_already_onreadystatechange_wrapped = true;
         var onreadystatechange = this.onreadystatechange;
         this.onreadystatechange = function() {
           if (\(FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE) == null || \(FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE) == true) {
@@ -141,13 +141,13 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
             }
             convertRequestResponse(this, function(response) {
               var ajaxRequest = {
-                method: self._flutter_inappwebview_method,
-                url: self._flutter_inappwebview_url,
-                isAsync: self._flutter_inappwebview_isAsync,
-                user: self._flutter_inappwebview_user,
-                password: self._flutter_inappwebview_password,
+                method: self._tmpflutter_webview_method,
+                url: self._tmpflutter_webview_url,
+                isAsync: self._tmpflutter_webview_isAsync,
+                user: self._tmpflutter_webview_user,
+                password: self._tmpflutter_webview_password,
                 withCredentials: self.withCredentials,
-                headers: self._flutter_inappwebview_request_headers,
+                headers: self._tmpflutter_webview_request_headers,
                 readyState: self.readyState,
                 status: self.status,
                 responseURL: self.responseURL,
@@ -186,13 +186,13 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
       \(JAVASCRIPT_UTIL_VAR_NAME).convertBodyRequest(data).then(function(data) {
           var ajaxRequest = {
             data: data,
-            method: self._flutter_inappwebview_method,
-            url: self._flutter_inappwebview_url,
-            isAsync: self._flutter_inappwebview_isAsync,
-            user: self._flutter_inappwebview_user,
-            password: self._flutter_inappwebview_password,
+            method: self._tmpflutter_webview_method,
+            url: self._tmpflutter_webview_url,
+            isAsync: self._tmpflutter_webview_isAsync,
+            user: self._tmpflutter_webview_user,
+            password: self._tmpflutter_webview_password,
             withCredentials: self.withCredentials,
-            headers: self._flutter_inappwebview_request_headers,
+            headers: self._tmpflutter_webview_request_headers,
             responseType: self.responseType
           };
           window.\(JAVASCRIPT_BRIDGE_NAME).callHandler('shouldInterceptAjaxRequest', ajaxRequest).then(function(result) {
@@ -225,16 +225,16 @@ let INTERCEPT_AJAX_REQUEST_JS_SOURCE = """
               if (result.headers != null) {
                 for (var header in result.headers) {
                   var value = result.headers[header];
-                  var flutter_inappwebview_value = self._flutter_inappwebview_request_headers[header];
-                  if (flutter_inappwebview_value == null) {
-                    self._flutter_inappwebview_request_headers[header] = value;
+                  var tmpflutter_webview_value = self._tmpflutter_webview_request_headers[header];
+                  if (tmpflutter_webview_value == null) {
+                    self._tmpflutter_webview_request_headers[header] = value;
                   } else {
-                    self._flutter_inappwebview_request_headers[header] += ', ' + value;
+                    self._tmpflutter_webview_request_headers[header] += ', ' + value;
                   }
                   setRequestHeader.call(self, header, value);
                 };
               }
-              if ((self._flutter_inappwebview_method != result.method && result.method != null) || (self._flutter_inappwebview_url != result.url && result.url != null)) {
+              if ((self._tmpflutter_webview_method != result.method && result.method != null) || (self._tmpflutter_webview_url != result.url && result.url != null)) {
                 self.abort();
                 self.open(result.method, result.url, result.isAsync, result.user, result.password);
                 return;

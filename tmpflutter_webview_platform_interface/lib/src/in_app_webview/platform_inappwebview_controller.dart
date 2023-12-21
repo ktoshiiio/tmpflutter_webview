@@ -64,7 +64,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
       PlatformInAppWebViewControllerCreationParams params) {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',
@@ -80,7 +80,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   factory PlatformInAppWebViewController.static() {
     assert(
       InAppWebViewPlatform.instance != null,
-      'A platform implementation for `flutter_inappwebview` has not been set. Please '
+      'A platform implementation for `tmpflutter_webview` has not been set. Please '
       'ensure that an implementation of `InAppWebViewPlatform` has been set to '
       '`InAppWebViewPlatform.instance` before use. For unit testing, '
       '`InAppWebViewPlatform.instance` can be set with your own test implementation.',
@@ -630,10 +630,10 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   ///The Android implementation uses [addJavascriptInterface](https://developer.android.com/reference/android/webkit/WebView#addJavascriptInterface(java.lang.Object,%20java.lang.String)).
   ///The iOS implementation uses [addScriptMessageHandler](https://developer.apple.com/documentation/webkit/wkusercontentcontroller/1537172-addscriptmessagehandler?language=objc)
   ///
-  ///The JavaScript function that can be used to call the handler is `window.flutter_inappwebview.callHandler(handlerName <String>, ...args)`, where `args` are [rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+  ///The JavaScript function that can be used to call the handler is `window.tmpflutter_webview.callHandler(handlerName <String>, ...args)`, where `args` are [rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
   ///The `args` will be stringified automatically using `JSON.stringify(args)` method and then they will be decoded on the Dart side.
   ///
-  ///In order to call `window.flutter_inappwebview.callHandler(handlerName <String>, ...args)` properly, you need to wait and listen the JavaScript event `flutterInAppWebViewPlatformReady`.
+  ///In order to call `window.tmpflutter_webview.callHandler(handlerName <String>, ...args)` properly, you need to wait and listen the JavaScript event `flutterInAppWebViewPlatformReady`.
   ///This event will be dispatched as soon as the platform (Android or iOS) is ready to handle the `callHandler` method.
   ///```javascript
   ///   window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
@@ -641,7 +641,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   ///   });
   ///```
   ///
-  ///`window.flutter_inappwebview.callHandler` returns a JavaScript [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  ///`window.tmpflutter_webview.callHandler` returns a JavaScript [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
   ///that can be used to get the json result returned by [JavaScriptHandlerCallback].
   ///In this case, simply return data that you want to send and it will be automatically json encoded using [jsonEncode] from the `dart:convert` library.
   ///
@@ -649,11 +649,11 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   ///```html
   ///<script>
   ///   window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-  ///     window.flutter_inappwebview.callHandler('handlerFoo').then(function(result) {
+  ///     window.tmpflutter_webview.callHandler('handlerFoo').then(function(result) {
   ///       console.log(result);
   ///     });
   ///
-  ///     window.flutter_inappwebview.callHandler('handlerFooWithArgs', 1, true, ['bar', 5], {foo: 'baz'}).then(function(result) {
+  ///     window.tmpflutter_webview.callHandler('handlerFooWithArgs', 1, true, ['bar', 5], {foo: 'baz'}).then(function(result) {
   ///       console.log(result);
   ///     });
   ///   });
@@ -664,7 +664,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   ///```dart
   ///  // Inject JavaScript that will receive data back from Flutter
   ///  inAppWebViewController.evaluateJavascript(source: """
-  ///    window.flutter_inappwebview.callHandler('test', 'Text from Javascript').then(function(result) {
+  ///    window.tmpflutter_webview.callHandler('test', 'Text from Javascript').then(function(result) {
   ///      console.log(result);
   ///    });
   ///  """);
@@ -673,7 +673,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   ///There could be forbidden names for JavaScript handlers depending on the implementation platform.
   ///
   ///**NOTE**: This method should be called, for example, in the [PlatformWebViewCreationParams.onWebViewCreated] or [PlatformWebViewCreationParams.onLoadStart] events or, at least,
-  ///before you know that your JavaScript code will call the `window.flutter_inappwebview.callHandler` method,
+  ///before you know that your JavaScript code will call the `window.tmpflutter_webview.callHandler` method,
   ///otherwise you won't be able to intercept the JavaScript message.
   ///
   ///**Officially Supported Platforms/Implementations**:

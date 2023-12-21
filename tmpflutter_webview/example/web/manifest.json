@@ -1,11 +1,11 @@
 {
-    "name": "flutter_inappwebview_example",
-    "short_name": "flutter_inappwebview_example",
+    "name": "tmpflutter_webview_example",
+    "short_name": "tmpflutter_webview_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Demonstrates how to use the flutter_inappwebview plugin.",
+    "description": "Demonstrates how to use the tmpflutter_webview plugin.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,6 +1,6 @@
 //
 //  UIColor.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //

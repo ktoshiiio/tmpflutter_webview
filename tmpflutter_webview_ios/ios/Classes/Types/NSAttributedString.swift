@@ -1,6 +1,6 @@
 //
 //  NSAttributedString.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 05/03/21.
 //

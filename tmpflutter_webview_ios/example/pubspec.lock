@@ -75,10 +75,10 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_inappwebview_internal_annotations:
+  tmpflutter_webview_internal_annotations:
     dependency: transitive
     description:
-      name: flutter_inappwebview_internal_annotations
+      name: tmpflutter_webview_internal_annotations
       sha256: "5f80fd30e208ddded7dbbcd0d569e7995f9f63d45ea3f548d8dd4c0b473fb4c8"
       url: "https://pub.dev"
     source: hosted

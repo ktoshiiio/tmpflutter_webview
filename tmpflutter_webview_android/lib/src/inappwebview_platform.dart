@@ -27,7 +27,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidCookieManager].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [CookieManager] in `flutter_inappwebview` instead.
+  /// Look at using [CookieManager] in `tmpflutter_webview` instead.
   @override
   AndroidCookieManager createPlatformCookieManager(
     PlatformCookieManagerCreationParams params,
@@ -38,7 +38,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidInAppWebViewController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebViewController] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebViewController] in `tmpflutter_webview` instead.
   @override
   AndroidInAppWebViewController createPlatformInAppWebViewController(
     PlatformInAppWebViewControllerCreationParams params,
@@ -49,7 +49,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidInAppWebViewController] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebViewController] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebViewController] in `tmpflutter_webview` instead.
   @override
   AndroidInAppWebViewController createPlatformInAppWebViewControllerStatic() {
     return AndroidInAppWebViewController.static();
@@ -58,7 +58,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidInAppWebViewWidget].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppWebView] in `flutter_inappwebview` instead.
+  /// Look at using [InAppWebView] in `tmpflutter_webview` instead.
   @override
   AndroidInAppWebViewWidget createPlatformInAppWebViewWidget(
     PlatformInAppWebViewWidgetCreationParams params,
@@ -69,7 +69,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidFindInteractionController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [FindInteractionController] in `flutter_inappwebview` instead.
+  /// Look at using [FindInteractionController] in `tmpflutter_webview` instead.
   @override
   AndroidFindInteractionController createPlatformFindInteractionController(
     PlatformFindInteractionControllerCreationParams params,
@@ -80,7 +80,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidPrintJobController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [PrintJobController] in `flutter_inappwebview` instead.
+  /// Look at using [PrintJobController] in `tmpflutter_webview` instead.
   @override
   AndroidPrintJobController createPlatformPrintJobController(
     PlatformPrintJobControllerCreationParams params,
@@ -91,7 +91,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidPullToRefreshController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [PullToRefreshController] in `flutter_inappwebview` instead.
+  /// Look at using [PullToRefreshController] in `tmpflutter_webview` instead.
   @override
   AndroidPullToRefreshController createPlatformPullToRefreshController(
     PlatformPullToRefreshControllerCreationParams params,
@@ -102,7 +102,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidWebMessageChannel].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageChannel] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageChannel] in `tmpflutter_webview` instead.
   @override
   AndroidWebMessageChannel createPlatformWebMessageChannel(
     PlatformWebMessageChannelCreationParams params,
@@ -113,7 +113,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidWebMessageChannel] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageChannel] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageChannel] in `tmpflutter_webview` instead.
   @override
   AndroidWebMessageChannel createPlatformWebMessageChannelStatic() {
     return AndroidWebMessageChannel.static();
@@ -122,7 +122,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidWebMessageListener].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessageListener] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessageListener] in `tmpflutter_webview` instead.
   @override
   AndroidWebMessageListener createPlatformWebMessageListener(
     PlatformWebMessageListenerCreationParams params,
@@ -133,7 +133,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidJavaScriptReplyProxy].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [JavaScriptReplyProxy] in `flutter_inappwebview` instead.
+  /// Look at using [JavaScriptReplyProxy] in `tmpflutter_webview` instead.
   @override
   AndroidJavaScriptReplyProxy createPlatformJavaScriptReplyProxy(
     PlatformJavaScriptReplyProxyCreationParams params,
@@ -144,7 +144,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidWebMessagePort].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebMessagePort] in `flutter_inappwebview` instead.
+  /// Look at using [WebMessagePort] in `tmpflutter_webview` instead.
   @override
   AndroidWebMessagePort createPlatformWebMessagePort(
     PlatformWebMessagePortCreationParams params,
@@ -155,7 +155,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidWebStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [AndroidWebStorage] in `flutter_inappwebview` instead.
+  /// Look at using [AndroidWebStorage] in `tmpflutter_webview` instead.
   @override
   AndroidWebStorage createPlatformWebStorage(
     PlatformWebStorageCreationParams params,
@@ -166,7 +166,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidLocalStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [AndroidLocalStorage] in `flutter_inappwebview` instead.
+  /// Look at using [AndroidLocalStorage] in `tmpflutter_webview` instead.
   @override
   AndroidLocalStorage createPlatformLocalStorage(
     PlatformLocalStorageCreationParams params,
@@ -177,7 +177,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidSessionStorage].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [PlatformSessionStorage] in `flutter_inappwebview` instead.
+  /// Look at using [PlatformSessionStorage] in `tmpflutter_webview` instead.
   @override
   AndroidSessionStorage createPlatformSessionStorage(
     PlatformSessionStorageCreationParams params,
@@ -188,7 +188,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidHeadlessInAppWebView].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [HeadlessInAppWebView] in `flutter_inappwebview` instead.
+  /// Look at using [HeadlessInAppWebView] in `tmpflutter_webview` instead.
   @override
   AndroidHeadlessInAppWebView createPlatformHeadlessInAppWebView(
     PlatformHeadlessInAppWebViewCreationParams params,
@@ -199,7 +199,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidHttpAuthCredentialDatabase].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [HttpAuthCredentialDatabase] in `flutter_inappwebview` instead.
+  /// Look at using [HttpAuthCredentialDatabase] in `tmpflutter_webview` instead.
   @override
   AndroidHttpAuthCredentialDatabase createPlatformHttpAuthCredentialDatabase(
     PlatformHttpAuthCredentialDatabaseCreationParams params,
@@ -210,7 +210,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidInAppBrowser].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [InAppBrowser] in `tmpflutter_webview` instead.
   @override
   AndroidInAppBrowser createPlatformInAppBrowser(
     PlatformInAppBrowserCreationParams params,
@@ -221,7 +221,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidInAppBrowser] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InAppBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [InAppBrowser] in `tmpflutter_webview` instead.
   @override
   AndroidInAppBrowser createPlatformInAppBrowserStatic() {
     return AndroidInAppBrowser.static();
@@ -230,7 +230,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidProcessGlobalConfig].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ProcessGlobalConfig] in `flutter_inappwebview` instead.
+  /// Look at using [ProcessGlobalConfig] in `tmpflutter_webview` instead.
   @override
   AndroidProcessGlobalConfig createPlatformProcessGlobalConfig(
     PlatformProcessGlobalConfigCreationParams params,
@@ -241,7 +241,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidProxyController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ProxyController] in `flutter_inappwebview` instead.
+  /// Look at using [ProxyController] in `tmpflutter_webview` instead.
   @override
   AndroidProxyController createPlatformProxyController(
     PlatformProxyControllerCreationParams params,
@@ -252,7 +252,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidServiceWorkerController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ServiceWorkerController] in `flutter_inappwebview` instead.
+  /// Look at using [ServiceWorkerController] in `tmpflutter_webview` instead.
   @override
   AndroidServiceWorkerController createPlatformServiceWorkerController(
     PlatformServiceWorkerControllerCreationParams params,
@@ -263,7 +263,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidServiceWorkerController] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ServiceWorkerController] in `flutter_inappwebview` instead.
+  /// Look at using [ServiceWorkerController] in `tmpflutter_webview` instead.
   @override
   AndroidServiceWorkerController createPlatformServiceWorkerControllerStatic() {
     return AndroidServiceWorkerController.static();
@@ -272,7 +272,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidTracingController].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [TracingController] in `flutter_inappwebview` instead.
+  /// Look at using [TracingController] in `tmpflutter_webview` instead.
   @override
   AndroidTracingController createPlatformTracingController(
     PlatformTracingControllerCreationParams params,
@@ -283,7 +283,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidAssetsPathHandler].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [AssetsPathHandler] in `flutter_inappwebview` instead.
+  /// Look at using [AssetsPathHandler] in `tmpflutter_webview` instead.
   @override
   AndroidAssetsPathHandler createPlatformAssetsPathHandler(
     PlatformAssetsPathHandlerCreationParams params,
@@ -294,7 +294,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidResourcesPathHandler].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ResourcesPathHandler] in `flutter_inappwebview` instead.
+  /// Look at using [ResourcesPathHandler] in `tmpflutter_webview` instead.
   @override
   AndroidResourcesPathHandler createPlatformResourcesPathHandler(
     PlatformResourcesPathHandlerCreationParams params,
@@ -305,7 +305,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidInternalStoragePathHandler].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [InternalStoragePathHandler] in `flutter_inappwebview` instead.
+  /// Look at using [InternalStoragePathHandler] in `tmpflutter_webview` instead.
   @override
   AndroidInternalStoragePathHandler createPlatformInternalStoragePathHandler(
     PlatformInternalStoragePathHandlerCreationParams params,
@@ -316,7 +316,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [wv.AndroidWebViewFeature].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebViewFeature] in `flutter_inappwebview` instead.
+  /// Look at using [WebViewFeature] in `tmpflutter_webview` instead.
   @override
   wv.AndroidWebViewFeature createPlatformWebViewFeature(
     PlatformWebViewFeatureCreationParams params,
@@ -327,7 +327,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [wv.AndroidWebViewFeature] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebViewFeature] in `flutter_inappwebview` instead.
+  /// Look at using [WebViewFeature] in `tmpflutter_webview` instead.
   @override
   wv.AndroidWebViewFeature createPlatformWebViewFeatureStatic() {
     return wv.AndroidWebViewFeature.static();
@@ -336,7 +336,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new [AndroidChromeSafariBrowser].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [ChromeSafariBrowser] in `tmpflutter_webview` instead.
   @override
   AndroidChromeSafariBrowser createPlatformChromeSafariBrowser(
     PlatformChromeSafariBrowserCreationParams params,
@@ -347,7 +347,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidChromeSafariBrowser] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [ChromeSafariBrowser] in `flutter_inappwebview` instead.
+  /// Look at using [ChromeSafariBrowser] in `tmpflutter_webview` instead.
   @override
   AndroidChromeSafariBrowser createPlatformChromeSafariBrowserStatic() {
     return AndroidChromeSafariBrowser.static();
@@ -356,7 +356,7 @@ class AndroidInAppWebViewPlatform extends InAppWebViewPlatform {
   /// Creates a new empty [AndroidWebStorageManager] to access static methods.
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebStorageManager] in `flutter_inappwebview` instead.
+  /// Look at using [WebStorageManager] in `tmpflutter_webview` instead.
   @override
   AndroidWebStorageManager createPlatformWebStorageManager(
       PlatformWebStorageManagerCreationParams params) {

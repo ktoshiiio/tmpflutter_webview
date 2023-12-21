@@ -1,6 +1,6 @@
 //
 //  InAppBrowserMenuItem.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 21/05/23.
 //

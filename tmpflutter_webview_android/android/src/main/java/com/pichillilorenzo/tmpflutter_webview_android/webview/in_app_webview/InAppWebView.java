@@ -115,7 +115,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 final public class InAppWebView extends InputAwareWebView implements InAppWebViewInterface {
   protected static final String LOG_TAG = "InAppWebView";
-  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/flutter_inappwebview_";
+  public static final String METHOD_CHANNEL_NAME_PREFIX = "com.pichillilorenzo/tmpflutter_webview_";
 
   @Nullable
   public InAppWebViewFlutterPlugin plugin;
@@ -1729,6 +1729,12 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
       channelDelegate.onWebViewClosed();
     }
   }
+
+//  public void launchURL(String url){
+//    if(channelDelegate != null){
+//      channelDelegate.launchURL(url);
+//    }
+//  }
 
   public void onScrollStopped() {
     if (floatingContextMenu != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

@@ -1,13 +1,13 @@
 //
 //  javaScriptBridgeJS.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //
 
 import Foundation
 
-let JAVASCRIPT_BRIDGE_NAME = "flutter_inappwebview"
+let JAVASCRIPT_BRIDGE_NAME = "tmpflutter_webview"
 let JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT_GROUP_NAME = "IN_APP_WEBVIEW_JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT"
 
 let JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT = PluginScript(

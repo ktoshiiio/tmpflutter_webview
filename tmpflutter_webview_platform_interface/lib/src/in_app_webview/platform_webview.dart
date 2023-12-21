@@ -90,6 +90,8 @@ class PlatformWebViewCreationParams<T> {
 
   final void Function(T controller)? onWebViewClosed;
 
+  // final void Function(T controller, String? url)? launchURL;
+
   ///Use [onReceivedHttpError] instead.
   @Deprecated("Use onReceivedHttpError instead")
   final void Function(
@@ -1147,6 +1149,7 @@ class PlatformWebViewCreationParams<T> {
       @Deprecated('Use onReceivedError instead') this.onLoadError,
       this.onReceivedError,
       this.onWebViewClosed,
+      // this.launchURL,
       @Deprecated("Use onReceivedHttpError instead") this.onLoadHttpError,
       this.onReceivedHttpError,
       this.onProgressChanged,

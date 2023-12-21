@@ -1,6 +1,6 @@
 //
 //  CGRect.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 10/05/22.
 //

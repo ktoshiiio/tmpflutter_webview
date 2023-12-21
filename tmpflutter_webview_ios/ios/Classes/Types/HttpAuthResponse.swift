@@ -1,6 +1,6 @@
 //
 //  HttpAuthResponse.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 07/05/22.
 //

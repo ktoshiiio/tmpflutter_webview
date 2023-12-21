@@ -1,6 +1,6 @@
 //
 //  Size.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 26/03/21.
 //

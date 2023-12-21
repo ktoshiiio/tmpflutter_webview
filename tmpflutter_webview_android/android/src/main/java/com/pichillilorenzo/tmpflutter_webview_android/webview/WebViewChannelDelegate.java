@@ -2,6 +2,7 @@ package com.pichillilorenzo.tmpflutter_webview_android.webview;
 
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
@@ -909,11 +910,21 @@ public class WebViewChannelDelegate extends ChannelDelegateImpl {
   }
 
   public void onWebViewClosed() {
+    Log.e("WebViewChannelDelegate", "webViewClosed called");
     MethodChannel channel = getChannel();
     if (channel == null) return;
     Map<String, Object> obj = new HashMap<>();
+    Log.e("channel.invokeMethod", "webViewClosed called");
     channel.invokeMethod("onWebViewClosed", obj);
   }
+
+//  public void launchURL(String url){
+//    MethodChannel channel = getChannel();
+//    if (channel == null) return;
+//    Map<String, Object> obj = new HashMap<>();
+//    obj.put("url", url);
+//    channel.invokeMethod("launchURL", obj);
+//  }
 
   public void onTitleChanged(String title) {
     MethodChannel channel = getChannel();

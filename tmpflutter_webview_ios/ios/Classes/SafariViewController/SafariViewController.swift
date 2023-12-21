@@ -1,6 +1,6 @@
 //
 //  SafariViewController.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo on 25/09/18.
 //

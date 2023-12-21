@@ -9,6 +9,6 @@ public class EmbedderV1Activity extends io.flutter.app.FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     InAppWebViewFlutterPlugin.registerWith(
-            registrarFor("com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin"));
+            registrarFor("com.pichillilorenzo.tmpflutter_webview.InAppWebViewFlutterPlugin"));
   }
 }

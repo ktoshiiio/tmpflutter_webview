@@ -8,16 +8,16 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-80-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![Pub](https://img.shields.io/pub/v/flutter_inappwebview?include_prereleases)](https://pub.dartlang.org/packages/flutter_inappwebview)
-[![Pub Points](https://img.shields.io/pub/points/flutter_inappwebview)](https://pub.dev/packages/flutter_inappwebview/score)
-[![Pub Popularity](https://img.shields.io/pub/popularity/flutter_inappwebview)](https://pub.dev/packages/flutter_inappwebview/score)
-[![Pub Likes](https://img.shields.io/pub/likes/flutter_inappwebview)](https://pub.dev/packages/flutter_inappwebview/score)
+[![Pub](https://img.shields.io/pub/v/tmpflutter_webview?include_prereleases)](https://pub.dartlang.org/packages/tmpflutter_webview)
+[![Pub Points](https://img.shields.io/pub/points/tmpflutter_webview)](https://pub.dev/packages/tmpflutter_webview/score)
+[![Pub Popularity](https://img.shields.io/pub/popularity/tmpflutter_webview)](https://pub.dev/packages/tmpflutter_webview/score)
+[![Pub Likes](https://img.shields.io/pub/likes/tmpflutter_webview)](https://pub.dev/packages/tmpflutter_webview/score)
 [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://stackoverflow.com/questions/tagged/flutter-inappwebview)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](/LICENSE)
 
 [![Donate to this project](https://img.shields.io/badge/support-donate-yellow.svg)](https://inappwebview.dev/donate/)
-[![GitHub forks](https://img.shields.io/github/forks/pichillilorenzo/flutter_inappwebview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
-[![GitHub stars](https://img.shields.io/github/stars/pichillilorenzo/flutter_inappwebview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
+[![GitHub forks](https://img.shields.io/github/forks/pichillilorenzo/tmpflutter_webview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
+[![GitHub stars](https://img.shields.io/github/stars/pichillilorenzo/tmpflutter_webview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
 
 A Flutter plugin that allows you to add an inline webview, to use an headless webview, and to open an in-app browser window.
 
@@ -30,12 +30,12 @@ Migrating from version `5.x.x` is easy! Follow the online [Migration guide](http
 ## Articles/Resources
 
 - [Official documentation: inappwebview.dev/docs](https://inappwebview.dev/docs/intro)
-- Read the online [API Reference](https://pub.dartlang.org/documentation/flutter_inappwebview/latest/) to get the **full API documentation**.
+- Read the online [API Reference](https://pub.dartlang.org/documentation/tmpflutter_webview/latest/) to get the **full API documentation**.
 - [Official blog: inappwebview.dev/blog](https://inappwebview.dev/blog/)
 - Find open source projects on the [Official Showcase page: inappwebview.dev/showcase](https://inappwebview.dev/showcase/)
 - Check the [flutter_inappwebview_examples](https://github.com/pichillilorenzo/flutter_inappwebview_examples) repository for project examples
-- Check the [flutter_inappwebview/example/integration_test/webview_flutter_test.dart](https://github.com/pichillilorenzo/flutter_inappwebview/blob/master/flutter_inappwebview/example/integration_test/webview_flutter_test.dart) file for other code examples
-- [Flutter Browser App](https://github.com/pichillilorenzo/flutter_browser_app): A Full-Featured Mobile Browser App (such as the Google Chrome mobile browser) created using Flutter and the features offered by the flutter_inappwebview plugin
+- Check the [flutter_inappwebview/example/integration_test/webview_flutter_test.dart](https://github.com/pichillilorenzo/flutter_inappwebview/blob/master/tmpflutter_webview/example/integration_test/webview_flutter_test.dart) file for other code examples
+- [Flutter Browser App](https://github.com/pichillilorenzo/flutter_browser_app): A Full-Featured Mobile Browser App (such as the Google Chrome mobile browser) created using Flutter and the features offered by the tmpflutter_webview plugin
 
 ## Showcase - Who use it
 
@@ -55,7 +55,7 @@ Send a submission request to the [Submit App](https://inappwebview.dev/submit-ap
 
 ## Installation
 
-Add `flutter_inappwebview` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
+Add `tmpflutter_webview` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
 
 ### Installation - Web support
 
@@ -64,7 +64,7 @@ To make it work properly on the Web platform, you need to add the `web_support.j
 ```html
 <head>
     <!-- ... -->
-    <script type="application/javascript" src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js" defer></script>
+    <script type="application/javascript" src="/assets/packages/tmpflutter_webview_web/assets/web/web_support.js" defer></script>
     <!-- ... -->
 </head>
 ```  

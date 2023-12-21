@@ -1,6 +1,6 @@
 //
 //  WebViewChannelDelegate.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Lorenzo Pichilli on 06/05/22.
 //
@@ -937,9 +937,16 @@ public class WebViewChannelDelegate : ChannelDelegate {
         channel?.invokeMethod("onReceivedError", arguments: arguments)
     }
 
-    // public func onWebViewClosed(){
-    //     channel?.onWebViewClosed()   
+    public func onWebViewClosed() {
+    channel?.invokeMethod("onWebViewClosed", arguments: [:]) // 空の辞書を追加
+    }
+
+
+    // public func launchURL(url: String) {
+    // let arguments: [String: Any?] = ["url": url]
+    // channel?.invokeMethod("launchURL", arguments: arguments)
     // }
+
     
     public func onReceivedHttpError(request: WebResourceRequest, errorResponse: WebResourceResponse) {
         let arguments: [String: Any?] = [

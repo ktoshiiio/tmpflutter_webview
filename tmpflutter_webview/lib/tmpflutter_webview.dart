@@ -19,7 +19,7 @@
  *
 */
 
-library flutter_inappwebview;
+library tmpflutter_webview;
 
 export 'package:tmpflutter_webview_platform_interface/tmpflutter_webview_platform_interface.dart'
     hide

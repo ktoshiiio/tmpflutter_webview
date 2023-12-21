@@ -16,7 +16,7 @@ A Flutter plugin that allows you to add an inline webview, to use an headless we
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tmpflutter_webview/tmpflutter_webview.dart';
+import 'package:flutter_inappwebview/tmpflutter_webview.dart';
 
 class WebViewExampleScreen extends StatefulWidget {
   @override
@@ -107,7 +107,7 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
 
 ## Installation
 
-Add `flutter_inappwebview` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
+Add `tmpflutter_webview` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
 
 ### Installation - Web support
 
@@ -116,7 +116,7 @@ To make it work properly on the Web platform, you need to add the `web_support.j
 ```html
 <head>
     <!-- ... -->
-    <script type="application/javascript" src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js" defer></script>
+    <script type="application/javascript" src="/assets/packages/tmpflutter_webview_web/assets/web/web_support.js" defer></script>
     <!-- ... -->
 </head>
 ```  

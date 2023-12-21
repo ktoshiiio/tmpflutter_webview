@@ -45,6 +45,7 @@ public class JavaScriptBridgeInterface {
 
   @JavascriptInterface
   public void webViewClosed(){
+    Log.e("JavaScriptBridge", "webViewClosed called");
     if (inAppWebView == null){
       return;
     }
@@ -53,11 +54,28 @@ public class JavaScriptBridgeInterface {
       @Override
       public void run() {
         if (inAppWebView != null) {
+          Log.e("JavaScriptBridge", "inAppWebView.webViewClosed called");
           inAppWebView.webViewClosed();
         }
       }
     });
   }
+
+//  @JavascriptInterface
+//  public void launchURL(final String url){
+//    if (inAppWebView == null){
+//      return;
+//    }
+//    final Handler handler = new Handler(inAppWebView.getWebViewLooper());
+//    handler.post(new Runnable() {
+//      @Override
+//      public void run() {
+//        if (inAppWebView != null) {
+//          inAppWebView.launchURL(url);
+//        }
+//      }
+//    });
+//  }
 
   @JavascriptInterface
   public void _callHandler(final String handlerName, final String _callHandlerID, final String args) {

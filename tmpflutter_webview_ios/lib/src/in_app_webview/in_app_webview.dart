@@ -29,6 +29,7 @@ class IOSInAppWebViewWidgetCreationParams
     super.onLoadStop,
     @Deprecated('Use onReceivedError instead') super.onLoadError,
     super.onReceivedError,
+    super.onWebViewClosed,
     @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
     super.onReceivedHttpError,
     super.onProgressChanged,
@@ -131,7 +132,7 @@ class IOSInAppWebViewWidgetCreationParams
     super.initialUserScripts,
     this.pullToRefreshController,
     this.findInteractionController,
-    super.onWebViewClosed,
+    // super.launchURL,
   });
 
   /// Constructs a [IOSInAppWebViewWidgetCreationParams] using a
@@ -152,6 +153,7 @@ class IOSInAppWebViewWidgetCreationParams
           onLoadStop: params.onLoadStop,
           onLoadError: params.onLoadError,
           onReceivedError: params.onReceivedError,
+          onWebViewClosed: params.onWebViewClosed,
           onLoadHttpError: params.onLoadHttpError,
           onReceivedHttpError: params.onReceivedHttpError,
           onProgressChanged: params.onProgressChanged,
@@ -251,7 +253,8 @@ class IOSInAppWebViewWidgetCreationParams
               params.pullToRefreshController as IOSPullToRefreshController?,
           findInteractionController:
               params.findInteractionController as IOSFindInteractionController?,
-          onWebViewClosed: params.onWebViewClosed,
+          // onWebViewClosed: params.onWebViewClosed,
+          // launchURL: params.launchURL,
         );
 
   @override

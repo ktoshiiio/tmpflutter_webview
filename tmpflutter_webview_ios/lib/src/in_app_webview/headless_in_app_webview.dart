@@ -25,6 +25,7 @@ class IOSHeadlessInAppWebViewCreationParams
     super.onLoadStop,
     @Deprecated('Use onReceivedError instead') super.onLoadError,
     super.onReceivedError,
+    super.onWebViewClosed,
     @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
     super.onReceivedHttpError,
     super.onProgressChanged,
@@ -127,7 +128,8 @@ class IOSHeadlessInAppWebViewCreationParams
     super.initialUserScripts,
     this.pullToRefreshController,
     this.findInteractionController,
-    super.onWebViewClosed,
+    // super.onWebViewClosed,
+    // super.launchURL,
   });
 
   /// Creates a [IOSHeadlessInAppWebViewCreationParams] instance based on [PlatformHeadlessInAppWebViewCreationParams].
@@ -142,6 +144,7 @@ class IOSHeadlessInAppWebViewCreationParams
           onLoadStop: params.onLoadStop,
           onLoadError: params.onLoadError,
           onReceivedError: params.onReceivedError,
+          onWebViewClosed: params.onWebViewClosed,
           onLoadHttpError: params.onLoadHttpError,
           onReceivedHttpError: params.onReceivedHttpError,
           onProgressChanged: params.onProgressChanged,
@@ -241,7 +244,8 @@ class IOSHeadlessInAppWebViewCreationParams
               params.pullToRefreshController as IOSPullToRefreshController?,
           findInteractionController:
               params.findInteractionController as IOSFindInteractionController?,
-          onWebViewClosed: params.onWebViewClosed,
+          // onWebViewClosed: params.onWebViewClosed,
+          // launchURL: params.launchURL,
         );
 
   @override

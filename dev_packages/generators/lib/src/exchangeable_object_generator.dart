@@ -355,10 +355,13 @@ class ExchangeableObjectGenerator
           final constructorParameter = visitor.constructorParameters[fieldName];
           final isRequiredParameter = constructorParameter != null &&
               (constructorParameter.isRequiredNamed ||
-                  constructorParameter.isFinal || fieldElement.isFinal ||
+                  constructorParameter.isFinal ||
+                  fieldElement.isFinal ||
                   !Util.typeIsNullable(constructorParameter.type)) &&
               !constructorParameter.hasDefaultValue;
-          if (isRequiredParameter || fieldElement.isFinal || annotation.read("fromMapForceAllInline").boolValue) {
+          if (isRequiredParameter ||
+              fieldElement.isFinal ||
+              annotation.read("fromMapForceAllInline").boolValue) {
             requiredFields.add('$fieldName: $value,');
           } else {
             nonRequiredFields.add("instance.$fieldName = $value;");

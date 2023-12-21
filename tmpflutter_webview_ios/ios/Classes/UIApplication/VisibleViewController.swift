@@ -1,6 +1,6 @@
 //
 //  VisibleViewController.swift
-//  flutter_inappwebview
+//  tmpflutter_webview
 //
 //  Created by Alexandru Terente on 02.08.2023.
 //
