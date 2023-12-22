@@ -220,12 +220,20 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
     print('method = $call.method');
 
     switch (call.method) {
-      // case "launchURL":
-      //   if (webviewParams != null) {
-      //     String? url = call.arguments["url"];
-      //     webviewParams!.launchURL!(_controllerFromPlatform, url);
-      //   }
-      //   break;
+      case "launchURL":
+        if (webviewParams != null) {
+          print(
+              'in_app_webview_controller launchURL webviewParams is not null');
+          if (webviewParams!.launchURL != null) {
+            String? url = call.arguments["url"];
+            print('in_app_webview_controller url = $url');
+            if (url != null) {
+              webviewParams!.launchURL!(_controllerFromPlatform, url);
+              print('in_app_webview_controller _handleMethod launchURL called');
+            }
+          }
+        }
+        break;
       case "onWebViewClosed":
         if (webviewParams != null) {
           webviewParams!.onWebViewClosed!(_controllerFromPlatform);

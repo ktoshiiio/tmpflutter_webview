@@ -32,6 +32,7 @@ class PlatformInAppWebViewWidgetCreationParams
     @Deprecated('Use onReceivedError instead') super.onLoadError,
     super.onReceivedError,
     super.onWebViewClosed,
+    super.launchURL,
     @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
     super.onReceivedHttpError,
     super.onProgressChanged,
@@ -134,7 +135,6 @@ class PlatformInAppWebViewWidgetCreationParams
     super.initialUserScripts,
     super.pullToRefreshController,
     super.findInteractionController,
-    // super.launchURL,
   });
 
   /// Controls how one widget replaces another widget in the tree.

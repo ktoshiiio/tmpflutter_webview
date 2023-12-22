@@ -25,7 +25,7 @@ class PlatformHeadlessInAppWebViewCreationParams
       @Deprecated('Use onReceivedError instead') super.onLoadError,
       super.onReceivedError,
       super.onWebViewClosed,
-      // super.launchURL,
+      super.launchURL,
       @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
       super.onReceivedHttpError,
       super.onProgressChanged,

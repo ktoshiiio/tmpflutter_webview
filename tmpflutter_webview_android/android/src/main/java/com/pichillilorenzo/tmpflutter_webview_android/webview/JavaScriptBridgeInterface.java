@@ -61,21 +61,23 @@ public class JavaScriptBridgeInterface {
     });
   }
 
-//  @JavascriptInterface
-//  public void launchURL(final String url){
-//    if (inAppWebView == null){
-//      return;
-//    }
-//    final Handler handler = new Handler(inAppWebView.getWebViewLooper());
-//    handler.post(new Runnable() {
-//      @Override
-//      public void run() {
-//        if (inAppWebView != null) {
-//          inAppWebView.launchURL(url);
-//        }
-//      }
-//    });
-//  }
+  @JavascriptInterface
+  public void launchURL(final String url){
+    Log.e("JavaScriptBridge", "launchURL url = " + url);
+    if (inAppWebView == null){
+      return;
+    }
+    final Handler handler = new Handler(inAppWebView.getWebViewLooper());
+    handler.post(new Runnable() {
+      @Override
+      public void run() {
+        if (inAppWebView != null) {
+          Log.e("JavaScriptBridge", "inAppWebView.launchURL url = " + url);
+          inAppWebView.launchURL(url);
+        }
+      }
+    });
+  }
 
   @JavascriptInterface
   public void _callHandler(final String handlerName, final String _callHandlerID, final String args) {

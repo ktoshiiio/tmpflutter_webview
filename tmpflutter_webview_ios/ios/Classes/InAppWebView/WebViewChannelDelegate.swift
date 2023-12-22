@@ -942,10 +942,10 @@ public class WebViewChannelDelegate : ChannelDelegate {
     }
 
 
-    // public func launchURL(url: String) {
-    // let arguments: [String: Any?] = ["url": url]
-    // channel?.invokeMethod("launchURL", arguments: arguments)
-    // }
+    public func launchURL(url: String) {
+    let arguments: [String: Any?] = ["url": url]
+    channel?.invokeMethod("launchURL", arguments: arguments)
+    }
 
     
     public func onReceivedHttpError(request: WebResourceRequest, errorResponse: WebResourceResponse) {

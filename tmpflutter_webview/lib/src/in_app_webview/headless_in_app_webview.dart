@@ -137,6 +137,7 @@ class HeadlessInAppWebView {
             WebResourceError error)?
         onReceivedError,
     void Function(InAppWebViewController controller)? onWebViewClosed,
+    void Function(InAppWebViewController controller, String? url)? launchURL,
     @Deprecated("Use onReceivedHttpError instead")
     void Function(InAppWebViewController controller, Uri? url, int statusCode,
             String description)?
@@ -293,8 +294,6 @@ class HeadlessInAppWebView {
     void Function(InAppWebViewController controller, Size oldContentSize,
             Size newContentSize)?
         onContentSizeChanged,
-    // void Function(InAppWebViewController controller)? onWebViewClosed,
-    // void Function(InAppWebViewController controller, String? url)? launchURL,
   }) : this.fromPlatformCreationParams(
             params: PlatformHeadlessInAppWebViewCreationParams(
           controllerFromPlatform: (PlatformInAppWebViewController controller) =>
@@ -329,6 +328,9 @@ class HeadlessInAppWebView {
               : null,
           onWebViewClosed: onWebViewClosed != null
               ? (controller) => onWebViewClosed.call(controller)
+              : null,
+          launchURL: launchURL != null
+              ? (controller, url) => launchURL.call(controller, url)
               : null,
           onLoadHttpError: onLoadHttpError != null
               ? (controller, url, statusCode, description) =>
@@ -639,12 +641,6 @@ class HeadlessInAppWebView {
                   onContentSizeChanged.call(
                       controller, oldContentSize, newContentSize)
               : null,
-          // onWebViewClosed: onWebViewClosed != null
-          //     ? (controller) => onWebViewClosed.call(controller)
-          //     : null,
-          // launchURL: launchURL != null
-          //     ? (controller, url) => launchURL.call(controller, url)
-          //     : null,
         ));
 
   ///{@macro tmpflutter_webview_platform_interface.PlatformHeadlessInAppWebView.run}

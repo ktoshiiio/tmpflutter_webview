@@ -1730,11 +1730,12 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     }
   }
 
-//  public void launchURL(String url){
-//    if(channelDelegate != null){
-//      channelDelegate.launchURL(url);
-//    }
-//  }
+  public void launchURL(String url){
+    if(channelDelegate != null){
+      Log.e("InAppWebView", "launchURL url = " + url);
+      channelDelegate.launchURL(url);
+    }
+  }
 
   public void onScrollStopped() {
     if (floatingContextMenu != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

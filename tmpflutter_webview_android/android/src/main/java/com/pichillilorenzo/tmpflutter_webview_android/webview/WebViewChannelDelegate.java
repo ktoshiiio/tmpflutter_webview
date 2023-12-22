@@ -918,13 +918,15 @@ public class WebViewChannelDelegate extends ChannelDelegateImpl {
     channel.invokeMethod("onWebViewClosed", obj);
   }
 
-//  public void launchURL(String url){
-//    MethodChannel channel = getChannel();
-//    if (channel == null) return;
-//    Map<String, Object> obj = new HashMap<>();
-//    obj.put("url", url);
-//    channel.invokeMethod("launchURL", obj);
-//  }
+  public void launchURL(String url){
+    Log.e("WebViewChannelDelegate", "launchURL called");
+    MethodChannel channel = getChannel();
+    if (channel == null) return;
+    Map<String, Object> obj = new HashMap<>();
+    obj.put("url", url);
+    Log.e("channel.invokeMethod", "launchURL url = " + url);
+    channel.invokeMethod("launchURL", obj);
+  }
 
   public void onTitleChanged(String title) {
     MethodChannel channel = getChannel();

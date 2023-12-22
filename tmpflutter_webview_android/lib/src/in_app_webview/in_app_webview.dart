@@ -33,6 +33,7 @@ class AndroidInAppWebViewWidgetCreationParams
     @Deprecated('Use onReceivedError instead') super.onLoadError,
     super.onReceivedError,
     super.onWebViewClosed,
+    super.launchURL,
     @Deprecated("Use onReceivedHttpError instead") super.onLoadHttpError,
     super.onReceivedHttpError,
     super.onProgressChanged,
@@ -135,8 +136,6 @@ class AndroidInAppWebViewWidgetCreationParams
     super.initialUserScripts,
     this.pullToRefreshController,
     this.findInteractionController,
-    // super.onWebViewClosed,
-    // super.launchURL,
   });
 
   /// Constructs a [AndroidInAppWebViewWidgetCreationParams] using a
@@ -158,6 +157,7 @@ class AndroidInAppWebViewWidgetCreationParams
           onLoadError: params.onLoadError,
           onReceivedError: params.onReceivedError,
           onWebViewClosed: params.onWebViewClosed,
+          launchURL: params.launchURL,
           onLoadHttpError: params.onLoadHttpError,
           onReceivedHttpError: params.onReceivedHttpError,
           onProgressChanged: params.onProgressChanged,
@@ -257,8 +257,6 @@ class AndroidInAppWebViewWidgetCreationParams
               params.pullToRefreshController as AndroidPullToRefreshController?,
           findInteractionController: params.findInteractionController
               as AndroidFindInteractionController?,
-          // onWebViewClosed: params.onWebViewClosed,
-          // launchURL: params.launchURL,
         );
 
   @override

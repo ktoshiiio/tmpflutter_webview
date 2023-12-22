@@ -528,7 +528,9 @@ abstract class PlatformInAppBrowserEvents {
     print('platform_in_app_browser onWebViewClosed');
   }
 
-  // void launchURL(String? url) {}
+  void launchURL(String? url) {
+    print('platform_in_app_browser launchURL url = ${url}');
+  }
 
   ///Use [onReceivedHttpError] instead.
   @Deprecated("Use onReceivedHttpError instead")
