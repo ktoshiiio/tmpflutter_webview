@@ -1,6 +1,6 @@
 name: tmpflutter_webview_android
 description: Android implementation of the tmpflutter_webview plugin.
-version: 0.0.90
+version: 0.0.200
 homepage: http://empolio.co.jp/site-renewal/
 
 topics:
@@ -17,7 +17,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tmpflutter_webview_platform_interface: ^0.0.90
+  tmpflutter_webview_platform_interface: ^0.0.200
+  url_launcher: ^6.2.2
 
 dev_dependencies:
   flutter_test:

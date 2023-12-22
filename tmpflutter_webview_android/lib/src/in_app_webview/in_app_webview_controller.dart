@@ -17,7 +17,7 @@ import '../web_storage/web_storage.dart';
 
 import 'headless_in_app_webview.dart';
 import '_static_channel.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../print_job/main.dart';
 
 ///List of forbidden names for JavaScript handlers.
@@ -224,9 +224,20 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
         if (webviewParams != null) {
           print(
               'in_app_webview_controller launchURL webviewParams is not null');
+          String? url = call.arguments["url"];
+          print('in_app_webview_controller url = $url');
+          // URLを起動する処理
+          if (url != null && Uri.parse(url).isAbsolute) {
+            if (await canLaunch(url)) {
+              await launch(url);
+              print('External browser launched for $url');
+            } else {
+              print('Could not launch $url');
+            }
+          } else {
+            print('Invalid URL: $url');
+          }
           if (webviewParams!.launchURL != null) {
-            String? url = call.arguments["url"];
-            print('in_app_webview_controller url = $url');
             if (url != null) {
               webviewParams!.launchURL!(_controllerFromPlatform, url);
               print('in_app_webview_controller _handleMethod launchURL called');
