@@ -1,6 +1,6 @@
 name: tmpflutter_webview_ios
 description: iOS implementation of the tmpflutter_webview plugin.
-version: 0.0.200
+version: 0.1.6
 homepage: http://empolio.co.jp/site-renewal/
 topics:
   - html
@@ -16,7 +16,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tmpflutter_webview_platform_interface: ^0.0.200
+  tmpflutter_webview_platform_interface: ^0.1.5
 
 dev_dependencies:
   flutter_test:

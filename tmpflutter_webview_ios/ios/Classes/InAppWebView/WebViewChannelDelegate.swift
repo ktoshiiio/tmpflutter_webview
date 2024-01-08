@@ -849,6 +849,7 @@ public class WebViewChannelDelegate : ChannelDelegate {
             "message": message,
             "messageLevel": messageLevel
         ]
+        print("WebViewChannelDelegate.swift onConsoleMessage")
         channel?.invokeMethod("onConsoleMessage", arguments: arguments)
     }
     
@@ -938,7 +939,7 @@ public class WebViewChannelDelegate : ChannelDelegate {
     }
 
     public func onWebViewClosed() {
-    channel?.invokeMethod("onWebViewClosed", arguments: [:]) // 空の辞書を追加
+    channel?.invokeMethod("onWebViewClosed", arguments: [:])
     }
 
 

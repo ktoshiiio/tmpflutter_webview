@@ -343,6 +343,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     }
 
     public func prepare() {
+        print("InAppWebView.swift prepare()")
         scrollView.addGestureRecognizer(self.longPressRecognizer)
         scrollView.addGestureRecognizer(self.recognizerForDisablingContextMenuOnLinks)
         scrollView.addGestureRecognizer(self.panGestureRecognizer)
@@ -538,16 +539,19 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     }
     
     public func prepareAndAddUserScripts() -> Void {
+        print("InAppWebView.swift prepareAndAddUserScripts")
         if windowId != nil {
             // The new created window webview has the same WKWebViewConfiguration variable reference.
             // So, we cannot set another WKWebViewConfiguration for it unfortunately!
             // This is a limitation of the official WebKit API.
+        print("InAppWebView.swift prepareAndAddUserScripts windowId is not null")
             return
         }
         configuration.userContentController = WKUserContentController()
         configuration.userContentController.initialize()
         
         if let applePayAPIEnabled = settings?.applePayAPIEnabled, applePayAPIEnabled {
+        print("InAppWebView.swift prepareAndAddUserScripts applePayAPIEnabled")
             return
         }
         
@@ -583,14 +587,15 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
         configuration.userContentController.add(self, name: "onWebMessagePortMessageReceived")
         configuration.userContentController.removeScriptMessageHandler(forName: "onWebMessageListenerPostMessageReceived")
         configuration.userContentController.add(self, name: "onWebMessageListenerPostMessageReceived")
-        configuration.userContentController.addUserOnlyScripts(initialUserScripts)
-        configuration.userContentController.sync(scriptMessageHandler: self)
-        // webViewClosed メッセージハンドラの追加
+                // webViewClosed メッセージハンドラの追加
         configuration.userContentController.removeScriptMessageHandler(forName: "webViewClosed")
         configuration.userContentController.add(self, name: "webViewClosed")
+        configuration.userContentController.addUserOnlyScripts(initialUserScripts)
+        configuration.userContentController.sync(scriptMessageHandler: self)
     }
     
     public static func preWKWebViewConfiguration(settings: InAppWebViewSettings?) -> WKWebViewConfiguration {
+        print("InAppWebView.swift preWKWebViewConfiguration")
         let configuration = WKWebViewConfiguration()
         
         configuration.processPool = WKProcessPoolManager.sharedProcessPool
@@ -707,6 +712,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("InAppWebView.swift observeValue")
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             initializeWindowIdJS()
             let progress = Int(estimatedProgress * 100)
@@ -735,6 +741,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
                let oldContentSize = change?[.oldKey] as? CGSize,
                newContentSize != oldContentSize {
                 DispatchQueue.main.async {
+                    print("InAppWebView.swift observeValue")
                     self.onContentSizeChanged(oldContentSize: oldContentSize)
                 }
             }
@@ -970,6 +977,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
                     // re-add WKUserScripts for the next page load
                     prepareAndAddUserScripts()
                 } else {
+                    print("InAppWebView.swift removeAllUserScripts")
                     configuration.userContentController.removeAllUserScripts()
                 }
             }
@@ -2483,6 +2491,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     }
     
     public func onContentSizeChanged(oldContentSize: CGSize) {
+        print("InAppWebView.swift onContentSizeChanged")
         channelDelegate?.onContentSizeChanged(oldContentSize: oldContentSize,
                                               newContentSize: scrollView.contentSize)
     }
@@ -2765,7 +2774,12 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
 //    }
     
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name.starts(with: "console") {
+        print("InAppWebView.swift userContentController called")
+        print("message = " + message.name)
+        if message.name == "webViewClosed" {
+            print("webViewClosed called from JavaScript")
+            channelDelegate?.onWebViewClosed()
+        }else if message.name.starts(with: "console") {
             var messageLevel = 1
             switch (message.name) {
                 case "consoleLog":
@@ -2933,8 +2947,6 @@ if(window.\(JAVASCRIPT_BRIDGE_NAME)[\(_callHandlerID)] != null) {
                 }
                 webMessageListener.channelDelegate?.onPostMessage(message: webMessage, sourceOrigin: sourceOrigin, isMainFrame: isMainFrame)
             }
-        } else if message.name == "webViewClosed" {
-            print("webViewClosed called from JavaScript")
         }
     }
     

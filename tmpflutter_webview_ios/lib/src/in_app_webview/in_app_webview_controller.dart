@@ -1422,7 +1422,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
         List<dynamic> args = jsonDecode(call.arguments["args"]);
 
         _debugLog(handlerName, args);
-
+        print('in_app_webview_controller.dart handlerName = $handlerName');
         switch (handlerName) {
           case "onLoadResource":
             if ((webviewParams != null &&
@@ -1644,9 +1644,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
 
     InAppWebViewSettings? settings = await getSettings();
     if (settings != null && settings.javaScriptEnabled == true) {
-      List<Map<dynamic, dynamic>> links = (await evaluateJavascript(
-                  source:
-                      """
+      List<Map<dynamic, dynamic>> links = (await evaluateJavascript(source: """
 (function() {
   var linkNodes = document.head.getElementsByTagName("link");
   var links = [];
@@ -1672,9 +1670,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
   }
   return links;
 })();
-"""))
-              ?.cast<Map<dynamic, dynamic>>() ??
-          [];
+"""))?.cast<Map<dynamic, dynamic>>() ?? [];
       for (var link in links) {
         if (link["rel"] == "manifest") {
           manifestUrl = link["href"];
@@ -2286,9 +2282,8 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
   Future<List<MetaTag>> getMetaTags() async {
     List<MetaTag> metaTags = [];
 
-    List<Map<dynamic, dynamic>>? metaTagList = (await evaluateJavascript(
-            source:
-                """
+    List<Map<dynamic, dynamic>>? metaTagList =
+        (await evaluateJavascript(source: """
 (function() {
   var metaTags = [];
   var metaTagNodes = document.head.getElementsByTagName('meta');
@@ -2322,8 +2317,7 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
   }
   return metaTags;
 })();
-    """))
-        ?.cast<Map<dynamic, dynamic>>();
+    """))?.cast<Map<dynamic, dynamic>>();
 
     if (metaTagList == null) {
       return metaTags;

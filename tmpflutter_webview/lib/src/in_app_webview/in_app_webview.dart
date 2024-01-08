@@ -306,7 +306,7 @@ class InAppWebView extends StatefulWidget {
               windowId: windowId,
               keepAlive: keepAlive,
               initialUrlRequest: URLRequest(
-                  url: WebUri('${prefixUrl}${mediaId}/?u=${userParameter}')),
+                  url: WebUri('${prefixUrl}${mediaId}?u=${userParameter}')),
               initialFile: initialFile,
               initialData: initialData,
               initialOptions: initialOptions,
