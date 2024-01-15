@@ -590,6 +590,9 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
                 // webViewClosed メッセージハンドラの追加
         configuration.userContentController.removeScriptMessageHandler(forName: "webViewClosed")
         configuration.userContentController.add(self, name: "webViewClosed")
+                // launchURL 追加
+        configuration.userContentController.removeScriptMessageHandler(forName: "launchURL")
+        configuration.userContentController.add(self, name: "launchURL")
         configuration.userContentController.addUserOnlyScripts(initialUserScripts)
         configuration.userContentController.sync(scriptMessageHandler: self)
     }
@@ -2776,10 +2779,14 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate,
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("InAppWebView.swift userContentController called")
         print("message = " + message.name)
+        print("message body = " + String(describing: message.body))
         if message.name == "webViewClosed" {
             print("webViewClosed called from JavaScript")
             channelDelegate?.onWebViewClosed()
-        }else if message.name.starts(with: "console") {
+        }else if message.name == "launchURL"{
+            print("launchURL called from JavaScript")
+            channelDelegate?.launchURL(url: String(describing: message.body))
+        } else if message.name.starts(with: "console") {
             var messageLevel = 1
             switch (message.name) {
                 case "consoleLog":

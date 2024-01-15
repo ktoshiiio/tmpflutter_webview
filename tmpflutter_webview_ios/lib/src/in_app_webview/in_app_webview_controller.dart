@@ -9,6 +9,7 @@ import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:tmpflutter_webview_platform_interface/tmpflutter_webview_platform_interface.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../web_message/main.dart';
 
@@ -219,8 +220,27 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
     switch (call.method) {
       case "launchURL":
         if (webviewParams != null) {
+          print(
+              'in_app_webview_controller launchURL webviewParams is not null');
           String? url = call.arguments["url"];
-          webviewParams!.launchURL!(_controllerFromPlatform, url);
+          print('in_app_webview_controller url = $url');
+          // URLを起動する処理
+          if (url != null && Uri.parse(url).isAbsolute) {
+            if (await canLaunch(url)) {
+              await launch(url);
+              print('External browser launched for $url');
+            } else {
+              print('Could not launch $url');
+            }
+          } else {
+            print('Invalid URL: $url');
+          }
+          if (webviewParams!.launchURL != null) {
+            if (url != null) {
+              webviewParams!.launchURL!(_controllerFromPlatform, url);
+              print('in_app_webview_controller _handleMethod launchURL called');
+            }
+          }
         }
         break;
       case "onWebViewClosed":

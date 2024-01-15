@@ -242,15 +242,15 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.1.5"
+    version: "0.2.0"
   tmpflutter_webview_platform_interface:
     dependency: transitive
     description:
       name: tmpflutter_webview_platform_interface
-      sha256: d0a34ebf3e6bfcb29d444093003493ef9c60d300dc2fb54acdab978b2f4c2cba
+      sha256: "3d17b412be5d3c46e434e2bab3e06e5c0c910df406201239e652f221c188aaae"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.5"
+    version: "0.2.0"
   url_launcher:
     dependency: transitive
     description:
