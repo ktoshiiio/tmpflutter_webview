@@ -1,7 +1,7 @@
 name: tmpflutter_webview
 # name: tmpflutter_webview
 description: A Flutter plogin that you can easilly develop for webview.
-version: 0.2.4
+version: 0.9.1
 homepage: http://empolio.co.jp/site-renewal/
 
 topics:
@@ -18,9 +18,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tmpflutter_webview_platform_interface: ^0.2.0
-  tmpflutter_webview_android: ^0.2.0
-  tmpflutter_webview_ios: ^0.2.4
+  tmpflutter_webview_platform_interface: ^0.9.1
+  tmpflutter_webview_android: ^0.9.1
+  tmpflutter_webview_ios: ^0.9.1
 
 dev_dependencies:
   flutter_test:

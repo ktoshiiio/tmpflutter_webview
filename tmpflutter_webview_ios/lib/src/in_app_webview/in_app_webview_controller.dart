@@ -227,7 +227,8 @@ class IOSInAppWebViewController extends PlatformInAppWebViewController
           // URLを起動する処理
           if (url != null && Uri.parse(url).isAbsolute) {
             if (await canLaunch(url)) {
-              await launch(url);
+              await launchUrl(Uri.parse(url),
+                  mode: LaunchMode.externalApplication);
               print('External browser launched for $url');
             } else {
               print('Could not launch $url');

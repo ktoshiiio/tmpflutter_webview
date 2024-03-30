@@ -16,7 +16,7 @@ A Flutter plugin that allows you to add an inline webview, to use an headless we
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/tmpflutter_webview.dart';
+import 'package:tmpflutter_webview/tmpflutter_webview.dart';
 
 class WebViewExampleScreen extends StatefulWidget {
   @override
@@ -56,7 +56,9 @@ class _WebViewExampleScreenState extends State<WebViewExampleScreen> {
           children: [
             InAppWebView(
               key: webViewKey,
-              uid: '855384303',
+              mediaId: '560363030',
+              userParameter: 'user',
+              prefixUrl: 'https://dev.fusion-wall.smaad.net/wall/',
               initialSettings: settings,
               onWebViewCreated: (controller) async {
                 webViewController = controller;
