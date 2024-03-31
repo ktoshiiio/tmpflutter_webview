@@ -81,6 +81,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Log.e("TAG", "InAppBrowserActivity.java onCreate is called!!!!");
 
     Bundle b = getIntent().getExtras();
     if (b == null) return;
@@ -89,12 +90,16 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
 
     String managerId = b.getString("managerId");
     manager = InAppBrowserManager.shared.get(managerId);
-    if (manager == null || manager.plugin == null|| manager.plugin.messenger == null) return;
+    if (manager == null || manager.plugin == null|| manager.plugin.messenger == null) {
+      Log.e("TAG", "InAppBrowserActivity.java manager is null or manager.plugin is null");
+      return;
+    }
 
     Map<String, Object> settingsMap = (Map<String, Object>) b.getSerializable("settings");
     customSettings.parse(settingsMap);
 
     windowId = b.getInt("windowId");
+    Log.e("TAG", "InAppBrowserActivity.java onCreate windowId = " + windowId.toString());
 
     setContentView(R.layout.activity_web_view);
 
@@ -148,9 +153,11 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
     prepareView();
 
     if (windowId != -1) {
+      Log.e("TAG", "InAppBrowserActivity.java onCreate windowId = " + windowId);
       if (webView.plugin != null && webView.plugin.inAppWebViewManager != null) {
         Message resultMsg = webView.plugin.inAppWebViewManager.windowWebViewMessages.get(windowId);
         if (resultMsg != null) {
+          Log.e("TAG", "InAppBrowserActivity.java resultMsg =  " + resultMsg.toString());
           ((WebView.WebViewTransport) resultMsg.obj).setWebView(webView);
           resultMsg.sendToTarget();
         }
@@ -160,6 +167,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
       Map<String, Object> initialUrlRequest = (Map<String, Object>) b.getSerializable("initialUrlRequest");
       String initialData = b.getString("initialData");
       if (initialFile != null) {
+        Log.e("TAG", "InAppBrowserActivity.java initialFile =  " + initialFile);
         try {
           webView.loadFile(initialFile);
         } catch (IOException e) {
@@ -168,6 +176,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
         }
       }
       else if (initialData != null) {
+        Log.e("TAG", "InAppBrowserActivity.java initialData =  " + initialData);
         String mimeType = b.getString("initialMimeType");
         String encoding = b.getString("initialEncoding");
         String baseUrl = b.getString("initialBaseUrl");
@@ -175,6 +184,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
         webView.loadDataWithBaseURL(baseUrl, initialData, mimeType, encoding, historyUrl);
       }
       else if (initialUrlRequest != null) {
+        Log.e("TAG", "InAppBrowserActivity.java initialUrlRequest =  " + URLRequest.fromMap(initialUrlRequest).toString());
         URLRequest urlRequest = URLRequest.fromMap(initialUrlRequest);
         if (urlRequest != null) {
           webView.loadUrl(urlRequest);
@@ -188,19 +198,24 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
   }
 
   private void prepareView() {
-
+    Log.e("TAG", "InAppBrowserActivity.java prepareView is called");
     if (webView != null) {
+      Log.e("TAG", "InAppBrowserActivity.java prepareView webView is not null");
       webView.prepare();
     }
 
-    if (customSettings.hidden)
+    if (customSettings.hidden){
+      Log.e("TAG", "InAppBrowserActivity.java prepareView customSettins hidden is true");
       hide();
-    else
+    }else{
+      Log.e("TAG", "InAppBrowserActivity.java prepareView customSettins hidden is false");
       show();
+    }
 
     progressBar = findViewById(R.id.progressBar);
 
     if (progressBar != null) {
+      Log.e("TAG", "InAppBrowserActivity.java prepareView progressBar is not null");
       if (customSettings.hideProgressBar)
         progressBar.setMax(0);
       else
@@ -208,6 +223,7 @@ public class InAppBrowserActivity extends AppCompatActivity implements InAppBrow
     }
 
     if (actionBar != null) {
+      Log.e("TAG", "InAppBrowserActivity.java prepareView actionBar is not null");
       actionBar.setDisplayShowTitleEnabled(!customSettings.hideTitleBar);
 
       if (customSettings.hideToolbarTop)

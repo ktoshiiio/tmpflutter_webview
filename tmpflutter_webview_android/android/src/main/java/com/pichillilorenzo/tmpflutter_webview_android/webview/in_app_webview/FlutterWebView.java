@@ -41,6 +41,7 @@ public class FlutterWebView implements PlatformWebView {
 
   public FlutterWebView(final InAppWebViewFlutterPlugin plugin, final Context context, Object id,
                         HashMap<String, Object> params) {
+    Log.e("TAG", "FlutterWebView.java is called!!!");
     DisplayListenerProxy displayListenerProxy = new DisplayListenerProxy();
     DisplayManager displayManager = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
     displayListenerProxy.onPreWebViewInitialization(displayManager);
@@ -48,9 +49,20 @@ public class FlutterWebView implements PlatformWebView {
     keepAliveId = (String) params.get("keepAliveId");
     
     Map<String, Object> initialSettings = (Map<String, Object>) params.get("initialSettings");
+    if (initialSettings == null) {
+      Log.e("TAG", "FlutterWebView.java initialSettings is null");
+      initialSettings = new HashMap<String, Object>(); // 空のマップをデフォルト値として設定
+    }
     Map<String, Object> contextMenu = (Map<String, Object>) params.get("contextMenu");
+    if (contextMenu == null){
+      Log.e("TAG", "FlutterWebView.java contextMenu is null");
+      contextMenu = new HashMap<String, Object>();
+    }
     Integer windowId = (Integer) params.get("windowId");
     List<Map<String, Object>> initialUserScripts = (List<Map<String, Object>>) params.get("initialUserScripts");
+    if (initialUserScripts == null){
+      Log.e("TAG", "FlutterWebView.java initialUserScripts is null");
+    }
     Map<String, Object> pullToRefreshInitialSettings = (Map<String, Object>) params.get("pullToRefreshSettings");
 
     InAppWebViewSettings customSettings = new InAppWebViewSettings();

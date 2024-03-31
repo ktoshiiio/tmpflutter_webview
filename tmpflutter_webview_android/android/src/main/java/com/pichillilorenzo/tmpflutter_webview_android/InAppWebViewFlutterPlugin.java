@@ -26,6 +26,7 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 import io.flutter.view.FlutterView;
+import android.util.Log;
 
 public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
 
@@ -71,10 +72,13 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
   @SuppressWarnings("deprecation")
   public FlutterView flutterView;
 
-  public InAppWebViewFlutterPlugin() {}
+  public InAppWebViewFlutterPlugin() {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java is called");
+  }
 
   @SuppressWarnings("deprecation")
   public static void registerWith(PluginRegistry.Registrar registrar) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java registerWith is called");
     final InAppWebViewFlutterPlugin instance = new InAppWebViewFlutterPlugin();
     instance.registrar = registrar;
     instance.onAttachedToEngine(
@@ -83,6 +87,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
 
   @Override
   public void onAttachedToEngine(FlutterPluginBinding binding) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java OnAttachedToEngine is called!!!!");
     this.flutterAssets = binding.getFlutterAssets();
 
     // Shared.activity could be null or not.
@@ -95,6 +100,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
 
   @SuppressWarnings("deprecation")
   private void onAttachedToEngine(Context applicationContext, BinaryMessenger messenger, Activity activity, PlatformViewRegistry platformViewRegistry, FlutterView flutterView) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java OnAttachedToEngine inside is called!!!!");
     this.applicationContext = applicationContext;
     this.activity = activity;
     this.messenger = messenger;
@@ -128,6 +134,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
 
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java onDetachedFromEngine is called!!!!");
     if (platformUtil != null) {
       platformUtil.dispose();
       platformUtil = null;
@@ -188,24 +195,28 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
 
   @Override
   public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java onAttachedToActivity is called!!!!");
     this.activityPluginBinding = activityPluginBinding;
     this.activity = activityPluginBinding.getActivity();
   }
 
   @Override
   public void onDetachedFromActivityForConfigChanges() {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java onDetachedFromActivityForConfigChanges is called!!!!");
     this.activityPluginBinding = null;
     this.activity = null;
   }
 
   @Override
   public void onReattachedToActivityForConfigChanges(ActivityPluginBinding activityPluginBinding) {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java onReattachedToActivityForConfigChanges is called!!!!");
     this.activityPluginBinding = activityPluginBinding;
     this.activity = activityPluginBinding.getActivity();
   }
 
   @Override
   public void onDetachedFromActivity() {
+    Log.e("TAG", "InAppWebViewFlutterPlugin.java onDetachedFromActivity is called!!!!");
     this.activityPluginBinding = null;
     this.activity = null;
   }

@@ -191,6 +191,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
                       @Nullable Map<String, Object> contextMenu, View containerView,
                       List<UserScript> userScripts) {
     super(context, containerView, customSettings.useHybridComposition);
+    Log.e("TAG", "InAppWebView.java is called!!!!");
     this.plugin = plugin;
     this.id = id;
     final MethodChannel channel = new MethodChannel(plugin.messenger, METHOD_CHANNEL_NAME_PREFIX + id);
@@ -200,6 +201,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     this.contextMenu = contextMenu;
     this.initialUserOnlyScripts = userScripts;
     if (plugin != null && plugin.activity != null) {
+      Log.e("TAG", "InAppWebView.java plugin is not null plugin activity is not null!!!!");
       plugin.activity.registerForContextMenu(this);
     }
   }
@@ -236,7 +238,9 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
 
   @SuppressLint("RestrictedApi")
   public void prepare() {
+    Log.e("TAG", "InAppWebView.java prepare is called!!!!");
     if (plugin != null) {
+      Log.e("TAG", "InAppWebView.java prepareView plugin is not null");           
       webViewAssetLoaderExt = WebViewAssetLoaderExt.fromMap(customSettings.webViewAssetLoader, plugin, getContext());
     }
 

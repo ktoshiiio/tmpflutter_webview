@@ -37,6 +37,7 @@ import java.util.Map;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
+import android.util.Log;
 
 public class HeadlessInAppWebViewManager extends ChannelDelegateImpl {
   protected static final String LOG_TAG = "HeadlessInAppWebViewManager";
@@ -49,6 +50,7 @@ public class HeadlessInAppWebViewManager extends ChannelDelegateImpl {
   public HeadlessInAppWebViewManager(final InAppWebViewFlutterPlugin plugin) {
     super(new MethodChannel(plugin.messenger, METHOD_CHANNEL_NAME));
     this.plugin = plugin;
+    Log.e("TAG", "HeadlessInAppWebViewManager.java is called!!!!");
   }
 
   @Override
@@ -69,9 +71,14 @@ public class HeadlessInAppWebViewManager extends ChannelDelegateImpl {
   }
 
   public void run(String id, HashMap<String, Object> params) {
-    if (plugin == null || (plugin.activity == null && plugin.applicationContext == null)) return;
+    Log.e("TAG", "HeadlessAppWebViewManager.java run is called!!!");
+    if (plugin == null || (plugin.activity == null && plugin.applicationContext == null)) {
+      Log.e("TAG", "HeadlessAppWebViewManager.java  run plugin is null!!!");
+      return;
+    }
     Context context = plugin.activity;
     if (context == null) {
+      Log.e("TAG", "HeadlessAppWebViewManager.java run context is null!!!!");
       context = plugin.applicationContext;
     }
     FlutterWebView flutterWebView = new FlutterWebView(plugin, context, id, params);
